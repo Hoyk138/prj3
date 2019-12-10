@@ -93,14 +93,14 @@ $(function(){
 		      <hr/>
 		       <c:choose>
 		       <c:when test="${cateBest.saleClass eq 'p'}">
-		         <p>판매 : <c:out value="${cateBest.salePrice}"/></p>
+		         <p>판매 : <c:out value="${cateBest.salePrice}"/> 원</p>
 		       </c:when>
 		       <c:when test="${cateBest.saleClass eq 'r'}">
-		         <p>대여 : <c:out value="${cateBest.rentalPrice}"/></p>
+		         <p>대여 : <c:out value="${cateBest.rentalPrice}"/> 원</p>
 		       </c:when>
 		       <c:otherwise>
-		        <p>판매 : <c:out value="${cateBest.salePrice}"/><br/>
-		        	대여 : <c:out value="${cateBest.rentalPrice}"/></p>
+		        <p>판매 : <c:out value="${cateBest.salePrice}"/> 원<br/>
+		        	대여 : <c:out value="${cateBest.rentalPrice}"/> 원</p>
 		       </c:otherwise>
 		      </c:choose>
       </small>
@@ -141,14 +141,14 @@ $(function(){
 		      <hr/>
 		       <c:choose>
 		       <c:when test="${cateNew.saleClass eq 'p'}">
-		         <p>판매 : <c:out value="${cateNew.salePrice}"/></p>
+		         <p>판매 : <c:out value="${cateNew.salePrice}"/> 원</p>
 		       </c:when>
 		       <c:when test="${cateNew.saleClass eq 'r'}">
-		         <p>대여 : <c:out value="${cateNew.rentalPrice}"/></p>
+		         <p>대여 : <c:out value="${cateNew.rentalPrice}"/> 원</p>
 		       </c:when>
 		       <c:otherwise>
-		        <p>판매 : <c:out value="${cateNew.salePrice}"/><br/>
-		        	대여 : <c:out value="${cateNew.rentalPrice}"/></p>
+		        <p>판매 : <c:out value="${cateNew.salePrice}"/> 원<br/>
+		        	대여 : <c:out value="${cateNew.rentalPrice}"/> 원</p>
 		       </c:otherwise>
 		      </c:choose>
       </small>
