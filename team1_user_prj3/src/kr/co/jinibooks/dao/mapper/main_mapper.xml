@@ -45,8 +45,8 @@
 	from (select rownum r, book_code, title, author, rating, img, code
 		from (select b.book_code, b.title, b.author, b.rating, b.img , bc.code
 					from book b, book_category bc, purchase p
-					where (b.category_code=bc.code) and( p.book_code=b.book_code)
-					order by b.pub_date desc))
+					where (b.category_code=bc.code) and(p.book_code=b.book_code)
+					order by p.pay_date desc))
 	where r between 1 and 5
   </select>
   
@@ -56,8 +56,8 @@
 	select book_code, title, author, rating, img,code
 	from(select rownum r, book_code, title, author, rating, img,code
 		from(select book_code, title, author, rating, img,code
-							from book b, book_category c
-								where b.category_code=c.code
+				from book b, book_category c
+				where b.category_code=c.code
 					order by pub_date desc))
 	where r between 1 and 5
   </select>
@@ -86,7 +86,7 @@
   <select id="newbook" resultType="kr.co.jinibooks.domain.newBookDomain">
 	select b.pub_date,b.sale_price,b.rental_price, b.book_code, b.img, b.title, b.author, b.company, b.intro, b.rating, bc.name, b.sale_class, b.sale_state,bc.code
 	from book b, book_category bc
-	where (b.category_code=bc.code) and to_char(b.pub_date,'month')= to_char(sysdate, 'month') and to_char(b.pub_date,'year')= to_char(sysdate, 'year')
+	where (b.category_code=bc.code) and to_char(b.input_date,'month')= to_char(sysdate, 'month') and to_char(b.input_date,'year')= to_char(sysdate, 'year')
 	order by pub_date desc
   </select>
   
@@ -96,7 +96,7 @@
 	from(select rownum r, book_code, title, img, author, sale_price, rental_price, sale_class, sale_state,code
 			from(select distinct b.book_code, b.title, b.img, b.author, b.sale_price, b.rental_price, b.sale_class, b.sale_state, bc.code
 						from book b, book_category bc
-						where  b.category_code =bc.code and rating=5 and (b.pub_date between to_char( sysdate-( (to_char(sysdate,'D')) -2 ), 'yyyy-mm-dd' ) and to_char( sysdate-( (to_char(sysdate,'D')) -2 )+4, 'yyyy-mm-dd' ))
+						where  b.category_code =bc.code and rating=5 and (b.input_date between to_char( sysdate-( (to_char(sysdate,'D')) -2 ), 'yyyy-mm-dd' ) and to_char( sysdate-( (to_char(sysdate,'D')) -2 )+4, 'yyyy-mm-dd' ))
 						order by rating desc))
 	where r between 1 and 20
   </select>
@@ -117,7 +117,7 @@
 		from(select rownum r, book_code, title, img, author, sale_price, rental_price, sale_class, sale_state, pub_date,code
 				from(select distinct book_code, title, img, author, sale_price, rental_price, sale_class, sale_state, pub_date,code
 							from book b, book_category bc
-							where b.category_code =bc.code and rating=5 and trunc(pub_date,'mm')=trunc(sysdate,'mm')
+							where b.category_code =bc.code and rating=5 and trunc(input_date,'mm')=trunc(sysdate,'mm')
 							order by rating desc))
 		where r between 1 and 20
   </select>
