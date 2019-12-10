@@ -26,7 +26,7 @@
     <mapper resource="kr/co/jinibooks/dao/mapper/calc_mapper.xml"/>
     <mapper resource="kr/co/jinibooks/dao/mapper/book_list_mapper.xml"/>
     <mapper resource="kr/co/jinibooks/dao/mapper/calc_list_mapper.xml"/> 
-    <mapper resource="kr/co/sist/dao/mapper/notice_mapper.xml"/>
-    <mapper resource="kr/co/sist/dao/mapper/question_mapper.xml"/> 
+    <mapper resource="kr/co/jinibooks/dao/mapper/notice_mapper.xml"/>
+    <mapper resource="kr/co/jinibooks/dao/mapper/question_mapper.xml"/> 
   </mappers>
 </configuration>

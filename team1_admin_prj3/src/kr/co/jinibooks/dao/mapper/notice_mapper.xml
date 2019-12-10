@@ -3,9 +3,9 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   <!-- namespace는 package와 같습니다. -->
-<mapper namespace="kr.co.sist.dao.notice_mapper">
+<mapper namespace="kr.co.jinibooks.dao.notice_mapper">
 
-<select id="selectTotalCount" resultType="int" parameterType="kr.co.sist.vo.NoticeSearchVO">
+<select id="selectTotalCount" resultType="int" parameterType="kr.co.jinibooks.vo.NoticeSearchVO">
   select count(*) cnt 
   from notice
   <if test='keyword != null and !keyword.equals("")'>
@@ -15,8 +15,8 @@
   </if>
 </select>
 
-<select id="selectBoardList" resultType="kr.co.sist.domain.NoticeListDomain" 
-        parameterType="kr.co.sist.vo.NoticeSearchVO">
+<select id="selectBoardList" resultType="kr.co.jinibooks.domain.NoticeListDomain" 
+        parameterType="kr.co.jinibooks.vo.NoticeSearchVO">
         
 select num, id, subject, content,to_char(w_day,'yyyy-mm-dd') w_day
 from (select rownum r, num, id, subject, content, w_day
@@ -30,24 +30,24 @@ where r between #{ startNum } and #{ endNum }
           
 </select>
 
-<select id="NoticeDetail" resultType="kr.co.sist.domain.NoticeListDomain" parameterType="String">
+<select id="NoticeDetail" resultType="kr.co.jinibooks.domain.NoticeListDomain" parameterType="String">
 select num,subject,content,w_day
 from notice
 where num = #{num}
 </select>
 
-<update id="NoticeUpdate"  parameterType="kr.co.sist.vo.NoticeVO">
+<update id="NoticeUpdate"  parameterType="kr.co.jinibooks.vo.NoticeVO">
 update notice
 set subject=#{subject} , content=#{content}
 where num=#{num}
 </update>
 
-<delete id="NoticeDelete" parameterType="kr.co.sist.vo.NoticeVO">
+<delete id="NoticeDelete" parameterType="kr.co.jinibooks.vo.NoticeVO">
 delete from notice
 where num=#{num}
 </delete>
 
-<insert id="NoticeInsert"  parameterType="kr.co.sist.vo.NoticeVO">
+<insert id="NoticeInsert"  parameterType="kr.co.jinibooks.vo.NoticeVO">
 insert into notice(num,id,subject,content,w_day) 
 values(notice_code,#{ id },#{ subject },#{ content },sysdate)
 </insert>
