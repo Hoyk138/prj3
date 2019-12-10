@@ -196,7 +196,7 @@ $(function(){
 <!-- 종합 베스트 top5 끝 -->
 	
 <!-- 인기 도서 시작  -->
-	<label id="bookTitle2" >인기 도서</label>
+	<label id="bookTitle2" >오늘의 판매 도서</label>
 	<hr color="#646464"/>
 <div class="alert alert-success" id="showBook" role="alert" style="height: 500px">
 
