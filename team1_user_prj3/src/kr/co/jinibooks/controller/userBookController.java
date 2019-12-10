@@ -112,7 +112,7 @@ public class userBookController {
 	
 ////////////////////////////////////////////////////
 	@RequestMapping(value="book_searchList.do",method = GET )
-	public String searchList(SearchBookPageVO sbVO,@RequestParam(required = false, defaultValue = "1") String current_page,String keyword,Model model) {
+	public String searchList(SearchBookPageVO sbVO,@RequestParam(required = false, defaultValue = "1") String current_page,String url, String keyword,String pageView,Model model) {
 		SearchBookPageService bls= new SearchBookPageService();
 		SearchBookService sbs= new SearchBookService();
 		
@@ -124,24 +124,27 @@ public class userBookController {
 		int endNum=bls.endNum(pageScale, startNum);
 		sbVO.setStartNum(startNum);
 		sbVO.setEndNum(endNum);
-		indexListVO ilVO= new indexListVO(sbVO.getCurrentPag(),totalPage,"book_searchList.do?keyword="+keyword+"&");//////
+		System.out.println("-----------------"+ pageView);
+		indexListVO ilVO= new indexListVO(sbVO.getCurrentPag(),totalPage,url,pageView,keyword);//////
 		
 		
 		List<SearchBookListDomain> bookList=sbs.searchBookList(sbVO);
 		//기존의 값을 가져가며 인기순, 최신순, 평점순으로 보고싶을때..
 		List<SearchNewBookDomain> newRangeList=sbs.selectNewRange(sbVO);
+		List<SearchNewBookDomain> nameRangeList=sbs.selectNameRange(sbVO);
 		List<SearchBookListDomain>ratingRangeList=sbs.selectRatingRange(sbVO);
+		
 		String indexList=bls.indexList(ilVO);
 
 		model.addAttribute("indexList", indexList);
 		
 		model.addAttribute("searchBookList",bookList);
 		model.addAttribute("newRangeList",newRangeList);
+		model.addAttribute("nameRangeList",nameRangeList);
 		model.addAttribute("ratingRangeList",ratingRangeList);
 		
 		return "main_searchBook";
 	}//searchList
-	
 	//혜빈 끝//////////////////////////////////////////////////////////////////////////////////////////////////
 
 }

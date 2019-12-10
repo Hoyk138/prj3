@@ -423,4 +423,17 @@ public class UserBookDAO {
 		return cnt;
 	}
 	
+	public List<SearchNewBookDomain> selectNameRange(SearchBookPageVO sbVO) throws SQLException{
+		List<SearchNewBookDomain> nameRangeList=null;
+		try {
+			SqlSession ss = getSessionFactory().openSession();
+			nameRangeList=ss.selectList("selectSearchNameBook",sbVO);
+			ss.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}//end catch
+		return nameRangeList;
+	}//selectNameRange
+	
+	
 }//class

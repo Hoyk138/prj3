@@ -39,12 +39,10 @@
 $(function(){
 	$("#cartBtn").click(function(){
 
-		//var params="&id=${user_id}";
 		var params="&id=${user_id}";
 	
 		 if(confirm("장바구니에 담겠습니까?")){
 		var code="book_code=${param.code}"+params;
-		alert(code);
 			$.ajax({
 				url:"add_cart.do",
 				type:"get",
