@@ -38,17 +38,37 @@ $(function(){
 	});//click
 
 });
+/////////////12/10 수정///////////////////////
+function enterkey() {
+	if (window.event.keyCode == 13) {
+		var temp="";
+		temp=document.frm.keyword.value;
+		if($("#keyword").val().trim()==""){
+			document.frm.keyword.value="&nbsp";
+			return;
+		}//end if
+	
+	}//end if
+}//enterkey
+	
+	
+
+/////////////12/10 수정///////////////////////
 </script>
-    
+
     <div id="hLogo" >
-		  <form class="form-inline" action="book_searchList.do" method="get">
+		  <form class="form-inline" name="frm" id="pageViewFrm" action="book_searchList.do" method="get">
+		 
+		  <input type="hidden" name="pageView" id="pageView"/>
+		  <input type="hidden" name="url" id="url"  value="book_searchList.do"/>
+		  <input type="hidden" name="current_page" id="currentPage" value="1"/>
 		<nav>
 	  		<a class="navbar-brand" href="home.html">
 	    		<img src="http://localhost:8080/team1_user_prj3/common/images/header_logo.PNG"  class="d-inline-block align-top" alt=""><span id="logo">JINI BOOKS</span>
 			</a>
 		</nav>
 		<div id="hContent">
-			    <input class="form-control mr-sm-2" type="search" placeholder="도서명 검색" aria-label="Search" id="searchTxt" name="keyword">
+			    <input class="form-control mr-sm-2" type="search" placeholder="도서명 검색" aria-label="Search" id="keyword" name="keyword" onkeydown="enterkey()">
 		</div>
 		 <div id="hContent2">
 		 <%if(id==null){ %>
@@ -56,7 +76,7 @@ $(function(){
 			<a href="member/login.do" id="login">로그인</a>
 		<%}else{ %>
 			<a href="member/mypage/main.do" id="myPage">마이페이지</a>
-			<a href="book_cartList.do?id=${user_id}"  id="cart">책바구니</a>
+			<a href="#"  id="cart">책바구니</a>
 			<input type="button" id="logout" style="border: #FFF; background-color: #FFF;" value="로그아웃"/>
 			<!-- <a href="member/logout_process.do" id="logout">로그아웃</a> -->
 			<!-- <a href="javascript:location.replace('member/logout_process.do')" id="logout">로그아웃</a> -->

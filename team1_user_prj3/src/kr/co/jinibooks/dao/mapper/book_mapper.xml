@@ -15,7 +15,19 @@
 		
 	</select>
 	
-	<!-- 12/8  ***********수정  -->
+	<!--이름순으로 조회 -->
+	<select id="selectSearchNameBook" resultType="kr.co.jinibooks.domain.SearchNewBookDomain" parameterType="kr.co.jinibooks.vo.SearchBookPageVO">
+	select r,title, rating, author,sale_price, rental_price,img ,company ,intro,book_code, sale_class,code
+	from(select rownum r,title, rating, author,sale_price, rental_price,img ,company ,intro,book_code, sale_class,code
+	from(select title, rating, author,sale_price, rental_price,img ,company ,intro,book_code, sale_class,code
+	from book b, book_category c
+	where  b.category_code=c.code and title like '%'||#{keyword}||'%'
+	order by title)
+	order by r)
+	where r between ${startNum} and ${endNum}
+	</select>
+	
+	
 	<!-- 최신순으로 조회 -->
 	<select id="selectSearchNewBook" resultType="kr.co.jinibooks.domain.SearchNewBookDomain" parameterType="kr.co.jinibooks.vo.SearchBookPageVO">
 	select r,title, rating, author,sale_price, rental_price,img ,company ,intro,book_code, sale_class,code
@@ -27,7 +39,6 @@
 	order by r)
 	where r between ${startNum} and ${endNum}
 	</select>
-	<!-- 12/8  ***********수정  -->
 	<!-- 평점순으로 조회 -->
 	<select id="selectSearchRatingBook" resultType="sbd" parameterType="kr.co.jinibooks.vo.SearchBookPageVO">
 	select r,title, rating, author,sale_price, rental_price,img ,company ,intro,book_code, sale_class,code
