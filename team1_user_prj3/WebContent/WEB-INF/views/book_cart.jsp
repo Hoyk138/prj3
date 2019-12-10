@@ -43,7 +43,6 @@ function allChk(obj){
 	var chkObj= document.getElementsByName("code");
 	var rowCnt = chkObj.length - 1;
     var check = obj.checked;
-    alert(obj);
    
 	var priceChk = document.getElementsByName("book_price");
     var chkCnt=0;
@@ -115,7 +114,7 @@ function bookDel(){
 					alert("문제발생");
 				},
 				success:function(json){
-					alert("성공적으로 삭제");
+					alert("선택한 도서를 삭제했습니다");
 		    		 location.href="book_cartList.do?id=${user_id}";
 
 				}//success
@@ -204,7 +203,7 @@ $(function(){
 </div>
 <div class="card-group">
   <div class="card">
-    	<div style="text-align: center; margin: 10px; font-weight: bold" >구매리스트</div>
+    	<div style="text-align: center; margin: 10px; font-weight: bold" >  구매리스트   </div>
     <div class="card-body">
     <!--"구매"리스트 시작-->
 	
