@@ -120,7 +120,7 @@ public class SearchBookPageService {
 	// 첫번째 페이지 인덱스 화면이 아닌경우
 	if ( ilVO.getCurrentPage() > pagenumber) {
 		curpage = startpage - 1; // 시작페이지 번호보다 1 적은 페이지로 이동
-		strList = strList +"<li class=\"page-item\"><a class=\"page-link\" href="+ilVO.getUrl()+"current_page="+curpage+" aria-label=\"Previous\">\r\n" + 
+		strList = strList +"<li class=\"page-item\"><a class=\"page-link\" href=\"javascript:pageMove('"+ilVO.getUrl()+"','"+ilVO.getKeyword()+"','"+ilVO.getPageView()+"',"+curpage+"')\" aria-label=\"Previous\">\r\n" + 
 				"			        <span aria-hidden=\"true\">&laquo;</span></a></li>";
 	}else{
 		strList = strList +"<li class=\"page-item\">\r\n" + 
@@ -139,7 +139,7 @@ public class SearchBookPageService {
 		if (curpage == ilVO.getCurrentPage()) {
 			strList = strList +"<li class=\"page-item\"><a class='page-link' title='현재페이지'>"+ilVO.getCurrentPage()+"</a></li>";
 		} else {
-			strList = strList +"<li class=\"page-item\"><a class=\"page-link\" href="+ilVO.getUrl()+"current_page="+curpage+">"+curpage+"</a></li>";
+			strList = strList +"<li class=\"page-item\"><a class=\"page-link\" href=\"javascript:pageMove('"+ilVO.getUrl()+"','"+ilVO.getKeyword()+"','"+ilVO.getPageView()+"',"+curpage+")\">"+curpage+"</a></li>";
 		}//end else
 
 		curpage++;
@@ -151,8 +151,7 @@ public class SearchBookPageService {
 	if ( ilVO.getTotalPage()> endpage) {
 		curpage = endpage + 1; 
 		strList = strList + "<li class=\"page-item\">\r\n" + 
-				"			      <a class=\"page-link\" href="+ilVO.getUrl()+"current_page="+curpage+" aria-label=\"Previous\">\r\n" + 
-						"			        <span aria-hidden=\"true\">&laquo;</span></a>";
+				"			      <a class=\"page-link\" href=\"javascript:pageMove('"+ilVO.getUrl()+"','"+ilVO.getKeyword()+"','"+ilVO.getPageView()+"',"+curpage+")\" aria-label=\"Previous\">\r\n" +						"			        <span aria-hidden=\"true\">&laquo;</span></a>";
 	}else{
 		strList = strList + "<li class=\"page-item\">\r\n" + 
 				"			      <a class=\"page-link\" href=\"#\" aria-label=\"Previous\">\r\n" + 

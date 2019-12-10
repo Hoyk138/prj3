@@ -146,5 +146,23 @@ public class SearchBookService {
 		}//end catch
 		return list;
 	}//randomBook
+	public List<SearchNewBookDomain> selectNameRange(SearchBookPageVO sbVO){
+		List<SearchNewBookDomain> nameRangeList=null;
+		UserBookDAO bDao=UserBookDAO.getInstance();
+		String intro="";
+		try {
+			nameRangeList=bDao.selectNameRange(sbVO);
+			for(int i=0; i<nameRangeList.size(); i++) { 
+				intro=nameRangeList.get(i).getIntro(); 
+				if(intro.length()>120) {
+					intro=intro.substring(0,120)+"..."; 
+					nameRangeList.get(i).setIntro(intro);
+				}//end if
+			}//end for
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}//end catch
+		return nameRangeList;
+	}//selectNameRange
 
 }//class
