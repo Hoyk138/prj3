@@ -35,6 +35,13 @@
 $(function(){
 
 	$("#bookInsert").click(function(){
+		
+    	if($("#title").val() == ""){
+            alert("제목 입력바람");
+            $("#title").focus();
+            return;
+    	}
+		
 		//JavaScript로 charset Encoding 함수 : encodeURI()
 		
 		/* var formData1 = new FormData();
@@ -64,7 +71,9 @@ $(function(){
 		//FormData parameter에 담아줌
 		form.method = "POST";
 		form.enctype = "multipart/form-data";
+		
 		var formData = new FormData(form);
+		alert(formData);
 					
 		$.ajax({
 			url:"admin_book_regist_process.do",
@@ -87,7 +96,7 @@ $(function(){
 				    location.href="admin_book_list.do";
 				    
 				}else{
-				    alert("등록에 실패2");
+				    alert("상품 등록에 실패하였습니다.");
 				}//end if
 			}
 		})//ajax
@@ -173,30 +182,17 @@ $(function(){
 	<h3>| e-book 등록</h3>
 	<br/>
 
-
-
 		<form action="admin_book_regist_process.do"  id="bookUpdate" name="bookUpdate" method="post" enctype="multipart/form-data"> <!-- enctype ... -->
 		<div id="bookResist"> 
+		<div style="margin-left: 300px">
 		
 			<div id="registImage">
-				<!-- <div id="bookimg">
-		      		<img src="http://localhost:8080/Team1_prj3/common/images/book_img3.jpg" width="200px" height="250px"/>
-		    	</div>
-		    	<input type="file" name="upfile" id="upfile"class="inputBox"><br/>
-				<input type="file"class="form-control-file" id="exampleFormControlFile1" value="이미지선택">
-				<div id="bookbutton">
-				<button type="button" class="btn btn-secondary btn-sm">이미지선택</button>
-				</div>  -->
-				
 				<img id="viewImg"src="http://localhost:8080/team1_admin_prj3/common/images/book/noImg.jpg" width="200px" height="250px"/>
 				
 			    <!-- RFC 1867 HTML Form 기반의 파일 업로드 -->
 				<input type="file" name="upfile" id="upfile" class="inputBox"  style="width: 200px; margin-top: 15px;"><br/>
 				<input type="hidden" id="img" name="img"/>
 
-			    <!-- img file명 임시출력 -->
-			     <!-- <input type="text" class="form-control" id="img" name="img" style="width:100px;">  -->
-			 
 			</div> <!-- registImage 끝 -->
 			
 			<div id="registForm">
@@ -221,7 +217,7 @@ $(function(){
 				 <div class="form-row">
 					<div class="form-group col-md-6">
 					<label><span id="subjectText">도서명</span></label> 
-			      		<input type="text" class="form-control" id="title" name="title" style="width:500px;">
+			      		<input type="text" class="form-control" id="title" name="title" style="width:380px;">
 			    	</div>  
 		  		</div>
 		  		
@@ -241,13 +237,7 @@ $(function(){
 			  			<label ><span id="subjectText">출판사</span></label>
 			      		<input type="text" class="form-control" id="company"  name="company" >
 			    	</div>  
-			    	 <%-- <div class="form-group col-md-4">
-				      <label for="inputState"><span id="subjectText">판매상태</span></label>
-				      <select id="sale_state"  name="sale_state"  class="form-control" style="width:100px;">
-						<option value="y"><c:out value="판매"/></option>
-						<option value="n"><c:out value="절판"/></option>
-				      </select>
-				    </div> --%>
+			    	
 				    <div class="form-group col-md-6">
 				  		<label><span id="subjectText">출간일</span></label> 
 				  		<input type="text" class="form-control" id="pub_date"  name="pub_date" >
@@ -268,17 +258,18 @@ $(function(){
 				    
 				    <div class="form-group col-md-4">
 			      	  <label for="bookPrice"><span id="subjectText">판매가격</span></label>
-			          <input type="text" class="form-control" id="sale_price"  name="sale_price"  style="width:100px;">
+			          <input type="text" class="form-control" id="sale_price" value="0" name="sale_price"  style="width:100px;">
 			    	</div>
 			    	
 			    	<div class="form-group col-md-4">
 			      	  <label for="bookPrice"><span id="subjectText">대여가격</span></label>
-			          <input type="text" class="form-control" id="rental_price"  name="rental_price" style="width:100px;">
+			          <input type="text" class="form-control" id="rental_price" value="0" name="rental_price" style="width:100px;">
 			    	</div>
 				    
 			  	</div>
 			
 			</div> <!-- registForm 끝 -->
+			</div>
 		</div> <!-- bookResist 끝 -->
 
 	  <div class="form-group">
@@ -305,7 +296,7 @@ $(function(){
 	    </textarea>
 	  </div>
 	
-		<div id="registButton">
+		<div id="registButton" style="margin-left: 500px;">
 		<input type="button" class="btn btn-primary btn-lg" id="bookInsert" value="등록"/>
 		</div>
 	</form>

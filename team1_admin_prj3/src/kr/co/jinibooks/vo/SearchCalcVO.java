@@ -6,8 +6,7 @@ package kr.co.jinibooks.vo;
  */
 public class SearchCalcVO {
 
-	//itle, author, book_code;
-	private String field, keyword, title, author;
+	private String field, keyword, title, id;
 	private int currentPage, startNum, endNum;
 	public String getField() {
 		return field;
@@ -27,11 +26,11 @@ public class SearchCalcVO {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	public String getAuthor() {
-		return author;
+	public String getId() {
+		return id;
 	}
-	public void setAuthor(String author) {
-		this.author = author;
+	public void setId(String id) {
+		this.id = id;
 	}
 	public int getCurrentPage() {
 		return currentPage;
@@ -50,6 +49,11 @@ public class SearchCalcVO {
 	}
 	public void setEndNum(int endNum) {
 		this.endNum = endNum;
+	}
+	@Override
+	public String toString() {
+		return "SearchCalcVO [field=" + field + ", keyword=" + keyword + ", title=" + title + ", id=" + id
+				+ ", currentPage=" + currentPage + ", startNum=" + startNum + ", endNum=" + endNum + "]";
 	}
 	
 	

@@ -1,15 +1,14 @@
 package kr.co.jinibooks.vo;
 
 public class SearchRangeVO {
+	private int startNum, endNum;
 
-	private int startNum, endNum ;
-
-	
 	public SearchRangeVO() {
-
+		
 	}
 
 	public SearchRangeVO(int startNum, int endNum) {
+		super();
 		this.startNum = startNum;
 		this.endNum = endNum;
 	}
@@ -31,4 +30,5 @@ public class SearchRangeVO {
 	}
 	
 	
-} // class
+	
+}

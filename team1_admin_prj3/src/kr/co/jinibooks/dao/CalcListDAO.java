@@ -57,7 +57,7 @@ public class CalcListDAO {
 		try {
 			SqlSession ss=getSessionFactory().openSession();
 			//쿼리 수행 후 결과 받기
-			cnt=ss.selectOne("kr.co.jinibooks.dao.CalcListMapper.selectTotalCount", scVO);  // selectTotalCount mapper3에있는 아이디
+			cnt=ss.selectOne("kr.co.jinibooks.dao.CalcListMapper.selectTotalCount", scVO);  // selectTotalCount mapper에있는 아이디
 			//MyBatis Handler끊기
 			ss.close();
 		} catch (IOException e) {
@@ -65,6 +65,22 @@ public class CalcListDAO {
 		}//end catch
 		return cnt;
 	}//selectTotalCount
+	
+	/////////////////////////////////////
+	public int selectTotalCountR(SearchCalcVO scVO) throws SQLException{
+		int cnt=0;
+		//MyBatis Handler 얻기
+		try {
+			SqlSession ss=getSessionFactory().openSession();
+			//쿼리 수행 후 결과 받기
+			cnt=ss.selectOne("kr.co.jinibooks.dao.CalcListMapper.selectTotalCountR", scVO);  // selectTotalCount mapper에있는 아이디
+			//MyBatis Handler끊기
+			ss.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}//end catch
+		return cnt;
+	}//selectTotalCountR
 	
 	
 	public List<PurchaseListDomain> selectPurchaseList(SearchCalcVO scVO) throws SQLException{

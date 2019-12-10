@@ -56,7 +56,7 @@
 
 <form class="form-inline" action="admin_book_list.do" id="searchFrm" method="get">
 
- <div id="inquiry-condition" style="width: 800px; height:230px;  margin-bottom: 30px;"> 
+ <div id="inquiry-condition" style="width: 800px; height:150px;  margin-bottom: 30px;"> 
  
  <div style="width: 320px; height: 50px; float:left; margin-left: 80px">
   <div class="form-group">
@@ -84,35 +84,6 @@
 </select>
 <input type="text" style="vertical-align:top;" class="form-control mb-2 mr-ms-2" name="keyword" id="keyword" value="${ param.keyword }"/>
 </div> 
-
-
-<!-- <div style="width: 370px; height: 50px; float:left;">
-  <div class="form-group">
-    <label for="exampleFormControlSelect1" style="width: 110px;">판매 가격</label>
-    <input type="text" class="form-control form-control-sm" id="sale_price" name="sale_price1"  style="width: 100px" value="0" >원 ~ 
-    <input type="text" class="form-control form-control-sm" id="sale_price" name="sale_price2"  style="width: 100px" value="0">원
-  </div>
-</div>  -->
-
-<!-- <div style="width: 415px; height: 50px; float:right;">
-	<div class="form-group">
-	<label for="exampleFormControlSelect1" style="width: 110px;">상품 등록일</label>
-	<div class="input-group date">
-	  <input type="text" class="form-control form-control-sm" id="input_date" name="input_date"  style="width: 100px;">
-	  <span class="input-group-addon">
-	    <img src="http://localhost:8080/Team1_prj3/common/images/icon_calendar.png" style="margin-top: 5px; margin-left: 2px;"/>
-	  </span>
-	</div>
-	 ~ 
-	<div class="input-group date">
-	  <input type="text" class="form-control form-control-sm" id="input_date" name="input_date"  style="width: 100px;">
-	  <span class="input-group-addon">
-	    <img src="http://localhost:8080/Team1_prj3/common/images/icon_calendar.png" style="margin-top: 5px; margin-left: 2px;"/>
-	  </span>
-	</div>
-	
-	</div>
-</div>  -->
 
  <div style="width: 250px; height: 50px; float: left; margin-left: 100px">
   <div class="form-group">
@@ -146,7 +117,7 @@
   </div>
 </div > 
 <div style="width: 460px;  height: 50px; float:right; float:left; margin-left: 350px;  ">
-  <input type="submit" class="btn btn-dark" id="searchBtn" value="검색" />
+  <input type="submit" class="btn btn-primary" id="searchBtn" value="검색" />
 </div>
 
 </div> 
@@ -204,7 +175,7 @@
 	</c:forEach>
 	<c:if test="${empty bookData }">
 	<tr>
-		<td colspan="10">등록된 책 정보가 없습니다.</td>
+		<td colspan="10" style="text-align: center">등록된 책 정보가 없습니다.</td>
 	</tr>
 	</c:if>
   </tbody>

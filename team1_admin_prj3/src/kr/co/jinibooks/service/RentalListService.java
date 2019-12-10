@@ -29,7 +29,7 @@ public class RentalListService {
 		int totalCnt=0;
 		CalcListDAO clDao=CalcListDAO.getInstance();
 		try {
-			totalCnt=clDao.selectTotalCount(scVO);
+			totalCnt=clDao.selectTotalCountR(scVO);
 			System.out.println("totalCnt="+totalCnt);
 		} catch (SQLException e) {
 			e.printStackTrace();

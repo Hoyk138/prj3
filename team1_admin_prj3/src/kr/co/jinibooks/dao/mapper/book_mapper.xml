@@ -26,7 +26,7 @@
 </select>
 
 <!-- 검색조건에 따른 book 테이블의 북코드, 판매분류, 카테고리, 제목, 저자, 입력일, 판매가격, 대여가격, 판매상태 조회 -->
-<select id="searchBookCondition" resultMap="bookListMap" parameterType="kr.co.jinibooks.vo.SearchBookVO">
+<!-- <select id="searchBookCondition" resultMap="bookListMap" parameterType="kr.co.jinibooks.vo.SearchBookVO">
 	SELECT 	BOOK_CODE, SALE_CLASS, CATEGORY_CODE, TITLE, AUTHOR, TO_CHAR(INPUT_DATE,'YYYY-MM-DD') INPUT_DATE,  SALE_PRICE, RENTAL_PRICE, SALE_STATE FROM BOOK
 	
 	<where>
@@ -35,7 +35,7 @@
 		</if>
 	</where>
 	
-</select>
+</select> -->
 
 <!-- 북코드를 입력(parameterType)받아 해당 코드의 상세정보를 조회(resultType, resultMap)  -->
 <select id="selectBookDetail" resultType="bdd" parameterType="String"> 

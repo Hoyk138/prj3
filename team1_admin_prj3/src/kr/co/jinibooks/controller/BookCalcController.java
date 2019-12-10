@@ -88,14 +88,4 @@ public class BookCalcController {
 		return "admin_calc_rental";
 	}//rentalListPage
 	
-//	@RequestMapping(value="search_purchase_process.do", method=POST)
-//	public String searcBookList(SearchCalcVO scVO, Model model) {
-//		CalcMainService cms=new CalcMainService();
-//		
-//		model.addAttribute("searchPurchaseList", cms.searchPurchaseCondition(scVO));
-//		
-//		return "admin_calc_purchase";
-//	}
-
-	
 }//class

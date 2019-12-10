@@ -41,16 +41,35 @@ public class BookMainService {
 		}//searchOneBook
 		
 		
-		public JSONObject modifyBook(BookUpdateVO buVO) {
+		public JSONObject modifyBook(BookUpdateVO buVO, MultipartFile multipartFile) {
 			boolean flag=false;
-			
 			JSONObject json=new JSONObject();
 			
-			BookDAO bDao=BookDAO.getInstance();
+			buVO.setImg(multipartFile.getOriginalFilename());
+			
+			//파일 보내기
+			//1. 카테고리 코드 가져와서 해당 폴더 이름 찾기
+			String cateCode = buVO.getCategory_code();
+			String cate = cateCodeToEnglish(cateCode);
+			
+			System.out.println("C:/dev/workspace/team1_admin_prj3/WebContent/common/images/book/"+cate+"/"+multipartFile.getOriginalFilename());
+
+			//2. 경로 설정
+			File file = new File("C:/dev/workspace/team1_admin_prj3/WebContent/common/images/book/"+cate+"/"+multipartFile.getOriginalFilename());
 			
 			try {
+				//3. 파일 보내기
+				multipartFile.transferTo(file);
+			} catch (IllegalStateException ise) {
+				ise.printStackTrace();
+			} catch (IOException ioe) {
+				ioe.printStackTrace();
+			}//end catch
+			
+			BookDAO bDao=BookDAO.getInstance();
+			try {
 				int temp=bDao.updateBook(buVO);
-				flag=temp==1;  //1이면 true
+				flag=temp==1;  //1이면	 true
 				System.out.println(temp);
 				json.put("updateResult", flag);
 			} catch (SQLException e) {
@@ -59,7 +78,6 @@ public class BookMainService {
 			
 			return json;
 		}//modifyBook
-		
 		
 		public JSONObject removeBook(String book_code) {
 			boolean flag=false;
@@ -92,6 +110,8 @@ public class BookMainService {
 			String cateCode = biVO.getCategory_code();
 			String cate = cateCodeToEnglish(cateCode);
 
+			System.out.println("C:/dev/workspace/team1_admin_prj3/WebContent/common/images/book/"+cate+"/"+multipartFile.getOriginalFilename());
+			
 			//2. 경로 설정
 			File file = new File("C:/dev/workspace/team1_admin_prj3/WebContent/common/images/book/"+cate+"/"+multipartFile.getOriginalFilename());
 			
@@ -117,7 +137,7 @@ public class BookMainService {
 			}//end catch
 			
 			return json;
-		}//addCpEmp
+		}//addBook
 		
 		public String cateCodeToEnglish(String cateCode) {
 			String cateEnglish = null;

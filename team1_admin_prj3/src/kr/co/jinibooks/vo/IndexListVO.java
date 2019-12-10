@@ -5,6 +5,7 @@ public class IndexListVO {
 	private String url;
 	
 	public IndexListVO() {
+		super();
 	}
 
 	public IndexListVO(int currentPage, int totalPage, String url) {
@@ -37,6 +38,8 @@ public class IndexListVO {
 	public void setUrl(String url) {
 		this.url = url;
 	}
-
 	
+	
+	
+		
 }

@@ -32,6 +32,7 @@
 
 <script type="text/javascript"> 
 $(function(){
+	
 	$("#bookUpdate").click(function(){
 		//JavaScript로 charset Encoding 함수 : encodeURI()
 		/* alert($("#book_code").val());
@@ -41,13 +42,14 @@ $(function(){
 					+"&company="+encodeURI( $("#company").val() ) +"&sale_class="+encodeURI( $("#sale_class").val() ) +"&sale_state="+encodeURI( $("#sale_state").val() ) 
 					+"&intro="+encodeURI( $("#intro").val() ) +"&review="+encodeURI( $("#review").val() ) +"&author_intro="+encodeURI( $("#author_intro").val() ) 
 					+"&book_index="+encodeURI( $("#book_index").val() ) +"&sale_price="+encodeURI( $("#sale_price").val() ) +"&rental_price="+encodeURI( $("#rental_price").val() );  */
-	
 		
-		var form = document.getElementById('bookUpdate');
+		var form = document.getElementById('bookDetailModify');
 		//FormData parameter에 담아줌
 		form.method = "POST";
 		form.enctype = "multipart/form-data";
+		
 		var formData = new FormData(form);
+		alert(formData);
 					
 		$.ajax({
 			url:"admin_book_detail_modify_process.do",
@@ -58,19 +60,19 @@ $(function(){
 			data: formData,
 			dataType: "json",
 			error: function(xhr) {
-				alert("수정에 실패1");
+				alert("상품 정보 수정에 실패하였습니다. 잠시후 다시 시도해 주세요");
 				console.log("에러코드 : "+xhr.status);
 				console.log("에러메세지 : "+xhr.statusText);
 			},
 			success: function( json_obj ){
-				alert(json_obj);
+				//alert(json_obj);
 				var flag=json_obj.updateResult;
 				if( flag ) {
-				    alert("수정에 성공");
+				    alert("상품 정보 수정에 성공하였습니다");
 					$("#updateSuccess").submit();
 				    
 				}else{
-				    alert("수정에 실패2");
+				    alert("상품 정보 수정에 실패하였습니다");
 				}//end if
 			}
 		})//ajax
@@ -84,17 +86,17 @@ $(function(){
 			data:param,
 			dataType: "json",
 			error: function(xhr) {
-				alert("삭제에 실패1");
+				alert("상품 정보 삭제에 실패하였습니다. 잠시후 다시 시도해 주세요");
 				console.log("에러코드 : "+xhr.status);
 				console.log("에러메세지 : "+xhr.statusText);
 			},
 			success: function( json_obj ){
-				var flag=json_obj.deleteResult;  //?이부분이 좀 수상
+				var flag=json_obj.deleteResult;  
 				if( flag ) {
-				    alert("삭제에 성공");
+				    alert("상품 정보가 삭제되었습니다.");
 				    $("#deleteSuccess").submit();
 				}else{
-				    alert("삭제에 실패2");
+				    alert("상품 정보 삭제에 실패하였습니다");
 				}//end if
 			}
 		})//ajax
@@ -141,7 +143,7 @@ $(function(){
 	         return;
 	      }//end if
 	      
-	      sel_file1 = f;
+	      //sel_file1 = f;
 	      
           //////////이미지 화면에 보여주기 //////////
 	      var reader = new FileReader();
@@ -194,23 +196,14 @@ $(function(){
 		<input type="hidden" name="book_code" id="book_code" value="${param.book_code }"> <!--  수정할 때 값 넘겨주는 북코드 -->
 		<%-- <c:out value="${param.book_code }"></c:out> --%>
 		<div id="bookResist"> 
-		
+			<div style="margin-left: 300px">
 			<div id="registImage">
-			    <%-- <div id="bookimg"> 
-			      		<img src="http://localhost:8080/team1_admin_prj3/common/images/${ bookDetailData.img }" width="200px" height="250px"/>
-			    </div>
-						<!-- <input type="file"class="form-control-file" id="exampleFormControlFile1" value="이미지선택"> -->
-				 <div id="bookbutton">
-				 <!-- img file명 임시출력 -->
-				 <input type="text" class="form-control" id="img" name="img" value="${ bookDetailData.img }" style="width:100px;">
-						<button type="button" class="btn btn-secondary btn-sm">이미지선택</button>
-				</div>  --%>
 				
 				<img id="viewImg"src="http://localhost:8080/team1_admin_prj3/common/images/book/${ cateEnglish }/${ bookDetailData.img }" width="200px" height="250px"/>
 				
 			    <!-- RFC 1867 HTML Form 기반의 파일 업로드 -->
-				<input type="file" name="upfile" id="upfile" class="inputBox"  style="width: 200px; margin-top: 15px;"><br/>
-				<input type="hidden" id="img" name="img"/>
+				<input type="file" name="upfile" id="upfile" class="inputBox" style="width: 200px; margin-top: 15px;"><br/>
+				<input type="hidden" id="img" name="img" value="${bookDetailData.img }" />
 				
 			</div> <!-- registImage 끝 -->
 			
@@ -238,7 +231,7 @@ $(function(){
 				 <div class="form-row">
 					<div class="form-group col-md-6">
 					<label><span id="subjectText">도서명</span></label> 
-			      		<input type="text" class="form-control" id="title" name="title" value="${bookDetailData.title }" style="width:500px;">
+			      		<input type="text" class="form-control" id="title" name="title" value="${bookDetailData.title }" style="width:380px;">
 			    	</div>  
 		  		</div>
 		  		
@@ -260,7 +253,7 @@ $(function(){
 			    	</div>  
 			    	 <div class="form-group col-md-4">
 				      <label for="inputState"><span id="subjectText">판매상태</span></label>
-				      <select id="sale_state"  name="sale_state"  class="form-control" style="width:100px;">
+				      <select id="sale_state"  name="sale_state"  class="form-control" style="width:190px;">
 						<option value="y"${ bookDetailData.sale_state eq 'y'?" selected='selected' ":""}><c:out value="판매"/></option> 
 						<option value="n"${ bookDetailData.sale_state eq 'n'?" selected='selected' ":""}><c:out value="절판"/></option> 
 				      </select>
@@ -289,6 +282,7 @@ $(function(){
 			  	</div>
 			  	
 			</div> <!-- registForm 끝 -->
+			</div>
 		</div> <!-- bookResist 끝 -->
 
 	  <div class="form-group">
@@ -319,16 +313,14 @@ $(function(){
 	    </textarea>
 	  </div>
 	
-		<div id="registButton">
+		<div id="registButton" style="margin-left: 500px;">
 			<input type="button" class="btn btn-primary btn-lg" id="bookUpdate" value="수정"/>
-			<input type="button" class="btn btn-primary btn-lg" id="bookDelete" value="삭제"/>
+			<input type="button" class="btn btn-danger btn-lg" id="bookDelete" value="삭제"/>
 		</div>
 	</form>
 	
 	</div><!-- content 끝 -->
 </div> <!-- container 끝 -->
-
-
 
  <%@ include file="../../common/jsp/admin_include_footer.jsp" %>
 

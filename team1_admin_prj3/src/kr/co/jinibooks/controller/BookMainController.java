@@ -76,10 +76,10 @@ public class BookMainController {
 	
 	@RequestMapping(value="admin_book_detail_modify_process.do", method=POST)
 	@ResponseBody
-	public String modifyBookData(BookUpdateVO buVO) {
+	public String modifyBookData(BookUpdateVO buVO, @RequestParam("upfile") MultipartFile multipartFile) {
 		
 		BookMainService bms=new BookMainService();
-		JSONObject json=bms.modifyBook(buVO);
+		JSONObject json=bms.modifyBook(buVO ,multipartFile);
 		
 		return json.toJSONString();
 	}//modifyBookData
