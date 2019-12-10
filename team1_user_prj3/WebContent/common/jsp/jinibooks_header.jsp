@@ -19,7 +19,7 @@ $(function(){
 	
 	$("#logout").click(function() {
 		$.ajax({
-			url:"member/logout_process.do",
+			url:"/team1_user_prj3/member/logout_process.do",
 			type:"post",
 			dataType:"json",
 			error:function(xhr){
@@ -72,10 +72,10 @@ function enterkey() {
 		</div>
 		 <div id="hContent2">
 		 <%if(id==null){ %>
-			<a href="member/user_join.do" id="join">회원가입</a>
-			<a href="member/login.do" id="login">로그인</a>
+			<a href="/team1_user_prj3/member/user_join.do" id="join">회원가입</a>
+			<a href="/team1_user_prj3/member/login.do" id="login">로그인</a>
 		<%}else{ %>
-			<a href="member/mypage/main.do" id="myPage">마이페이지</a>
+			<a href="/team1_user_prj3/member/mypage/main.do" id="myPage">마이페이지</a>
 			<a href="#"  id="cart">책바구니</a>
 			<input type="button" id="logout" style="border: #FFF; background-color: #FFF;" value="로그아웃"/>
 			<!-- <a href="member/logout_process.do" id="logout">로그아웃</a> -->
@@ -110,7 +110,7 @@ function enterkey() {
 	    %>
 	      <dd >&nbsp;&nbsp;&nbsp;
 	      <%-- <a href ="book_categoryList.do?cate=${cateName[i]}" class="sub" id="cateName"> --%>
-	      <a href ="book_categoryList.do?cate=<%=cateName[i]%>" class="sub" id="cateName">
+	      <a href ="/team1_user_prj3/book_categoryList.do?cate=<%=cateName[i]%>" class="sub" id="cateName">
 	      <span>| <%=cateName[i] %> </span></a></dd>
 	    <!--  <hr color="#EE4137"/> -->
 	      <%
@@ -127,9 +127,9 @@ function enterkey() {
 	<div class="col-5">
 		<div class="clickColor">
 			<div class="container1 d-flex flex-column flex-md-row justify-content-between">
-			   <a class="py-3 d-none d-md-inline-block" href="home.html"  id="cateName_right"><span>홈</span></a>
-			   <a class="py-3 d-none d-md-inline-block" href="book_newList.do"  id="cateName_right"><span>신간</span></a>
-			   <a class="py-3 d-none d-md-inline-block" href="book_bestList.do" id="cateName_right"><span >베스트</span></a>
+			   <a class="py-3 d-none d-md-inline-block" href="/team1_user_prj3/home.html"  id="cateName_right"><span>홈</span></a>
+			   <a class="py-3 d-none d-md-inline-block" href="/team1_user_prj3/book_newList.do"  id="cateName_right"><span>신간</span></a>
+			   <a class="py-3 d-none d-md-inline-block" href="/team1_user_prj3/book_bestList.do" id="cateName_right"><span >베스트</span></a>
 			   <a class="py-3 d-none d-md-inline-block" href="#"  id="cateName_right"><span>공지사항</span></a>
 			</div>
 		</div>
