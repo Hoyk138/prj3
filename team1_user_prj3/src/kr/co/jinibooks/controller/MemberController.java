@@ -3,14 +3,10 @@ package kr.co.jinibooks.controller;
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
-import java.net.URI;
-
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 
 import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -29,7 +25,7 @@ import kr.co.jinibooks.vo.LoginVO;
 public class MemberController {
 
 	@Autowired(required = false)
-	private MemberService ms;
+	private MemberService memberService;
 	
 	@RequestMapping(value="member/user_join.do",method=GET)
 	public String userJoin(Model model) {
@@ -43,7 +39,7 @@ public class MemberController {
 		//System.out.println(inputID);
 		
 		//서비스를 사용하여 업무처리 결과를 받는다
-		JSONObject json = ms.searchIDOverlap(inputID);
+		JSONObject json = memberService.searchIDOverlap(inputID);
 		//System.out.println(json);
 		
 		return json.toJSONString();
@@ -55,7 +51,7 @@ public class MemberController {
 		//System.out.println(inputEmail);
 		
 		//서비스를 사용하여 업무처리 결과를 받는다
-		JSONObject json = ms.searchEmailOverlap(inputEmail);
+		JSONObject json = memberService.searchEmailOverlap(inputEmail);
 		//System.out.println(json);
 		
 		return json.toJSONString();
@@ -79,7 +75,7 @@ public class MemberController {
 		
 		System.out.println(jVO);
 		
-		JSONObject json = ms.addJoin(jVO);
+		JSONObject json = memberService.addJoin(jVO);
 		
 		return json.toJSONString();
 	}//joinProcess
@@ -101,12 +97,15 @@ public class MemberController {
 		
 		//System.out.println(lVO);
 		
-		JSONObject json = ms.searchIDPW(lVO);
+		JSONObject json = memberService.searchIDPW(lVO);
 		
 		//id와 pw가 유효하면 session에 id를 넣어 줍니다.
 		if((boolean)json.get("result_flag")) {
 			model.addAttribute("user_id", lVO.getInputID());
 		}//end if
+		
+		//member 테이블에 로그인 데이터를 update 합니다.
+		memberService.modifyLoginDate(lVO.getInputID());
 		
 		return json.toJSONString();
 	}//loginProcess
@@ -116,7 +115,6 @@ public class MemberController {
 	public String loginoutProcess(HttpServletRequest request, SessionStatus ss) {
 		
 		String header = request.getHeader("REFERER");
-		
 //		System.out.println(header);
 		
 		int idx = header.indexOf("team1_user_prj3");

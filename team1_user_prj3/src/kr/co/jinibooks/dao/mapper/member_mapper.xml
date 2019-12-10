@@ -27,5 +27,22 @@ from member
 where id = #{ inputID } and passwd = #{ inputPW }
 </select>
 
+<resultMap type="MemberInfoDomain" id="esdResult">
+  <result column="id" property="id"/>
+  <result column="name" property="name"/>
+  <result column="email" property="email"/>
+</resultMap>
+
+<select id="selectMemberInfo" resultMap="esdResult" parameterType="String">
+select id, name, email
+from member
+where id = #{id}
+</select>
+
+<update id="updateLoginDate" parameterType="String">
+update member
+set login_date = sysdate
+where id = #{id}
+</update>
 
 </mapper>

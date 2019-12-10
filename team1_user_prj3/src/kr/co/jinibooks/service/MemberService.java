@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import kr.co.jinibooks.dao.MemberDAO;
+import kr.co.jinibooks.domain.MemberInfoDomain;
 import kr.co.jinibooks.vo.JoinVO;
 import kr.co.jinibooks.vo.LoginVO;
 import kr.co.sist.util.cipher.DataEncrypt;
@@ -92,6 +93,7 @@ public class MemberService {
 	}//addCpEmp
 	
 	public JSONObject searchIDPW(LoginVO lVO) {
+		System.out.println("서비스에서 lVO 확인: "+ lVO);
 		JSONObject json = new JSONObject();
 		
 		String result_name;
@@ -121,5 +123,34 @@ public class MemberService {
 		
 		return json;
 	}//searchIDPW
+	
+	public MemberInfoDomain searchMemberInfo(String id) {
+		MemberInfoDomain mid = null;
+		
+		try {
+			mid = mDAO.selectMemberInfo(id);
+		} catch (SQLException sqle) {
+			sqle.printStackTrace();
+		}//end catch
+				
+		return mid;		
+	}//searchMemberInfo
+	
+	public void modifyLoginDate(String id){
+		//boolean flag = false;
+		
+		try {
+		    //DAO를 사용하여 
+			//쿼리문을 수행하고 결과를 얻는다.
+			int cnt = mDAO.updateLoginDate(id);
+			if(cnt == 1) {
+				//flag = true;
+			}//end if
+		} catch (SQLException sqle) {
+			sqle.printStackTrace();
+		}//end catch
+		
+		//return flag;
+	}//modifyLoginDate
 
 }

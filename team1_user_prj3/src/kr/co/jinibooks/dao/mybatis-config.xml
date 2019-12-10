@@ -12,6 +12,7 @@
 	<typeAlias type="kr.co.jinibooks.domain.SelectCateBookDomain" alias="scbd" />
 	
 	<typeAlias type="kr.co.jinibooks.domain.BookDomain" alias="BookDomain"/>
+	<typeAlias type="kr.co.jinibooks.domain.MemberInfoDomain" alias="MemberInfoDomain"/>
 	<typeAlias type="kr.co.jinibooks.vo.JoinVO" alias="JoinVO"/>
 	<typeAlias type="kr.co.jinibooks.vo.LoginVO" alias="LoginVO"/>
 </typeAliases>

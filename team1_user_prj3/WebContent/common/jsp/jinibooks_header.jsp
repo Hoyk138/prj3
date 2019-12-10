@@ -27,9 +27,9 @@ $(function(){
 			},
 			success:function(json){
 				if(json.flag){
-					alert("로그아웃 성공");
-					location.href="home.do";
-				   	//location.replace("/team1_user_prj3"+json.target);
+					//alert("로그아웃 성공");
+					//location.href="home.do";
+				   	location.replace("/team1_user_prj3"+json.target);
 				} else {
 					alert("로그아웃에 실패하였습니다.");
 				}//end if else

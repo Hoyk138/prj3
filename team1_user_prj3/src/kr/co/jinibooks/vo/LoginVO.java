@@ -3,6 +3,14 @@ package kr.co.jinibooks.vo;
 public class LoginVO {
 	
 	private String inputID, inputPW;
+	
+	public LoginVO() {
+	}
+
+	public LoginVO(String inputID, String inputPW) {
+		this.inputID = inputID;
+		this.inputPW = inputPW;
+	}
 
 	public String getInputID() {
 		return inputID;

@@ -10,14 +10,14 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.springframework.stereotype.Component;
 
+import kr.co.jinibooks.domain.MemberInfoDomain;
 import kr.co.jinibooks.vo.JoinVO;
 import kr.co.jinibooks.vo.LoginVO;
-import kr.co.jinibooks.vo.MemberVO;
 
 @Component
 public class MemberDAO {
     
-	private static MemberDAO jDAO;
+	private static MemberDAO mDAO;
 	private static SqlSessionFactory ssf;
 	
 	private MemberDAO() {
@@ -25,10 +25,10 @@ public class MemberDAO {
 	}//CpEmpDAO
 	
 	public static MemberDAO getInstance() {
-		if (jDAO == null) {
-			jDAO = new MemberDAO();
+		if (mDAO == null) {
+			mDAO = new MemberDAO();
 		}//end if
-		return jDAO;
+		return mDAO;
 	}//getInstance
 	
 	public SqlSessionFactory getSessionFactory() throws IOException {
@@ -125,5 +125,41 @@ public class MemberDAO {
 		
 		return name;
 	}//selectIDPW
+
+	public MemberInfoDomain selectMemberInfo(String id) throws SQLException {
+		MemberInfoDomain mid = null;
+		
+		try {
+			//4. MyBatis Handler 얻기
+			SqlSession ss = getSessionFactory().openSession();
+			//5. id를 넣어 mapper xml에서 해당 쿼리를 parsing하여 실행하고 결과를 얻습니다.
+			mid = ss.selectOne("kr.co.jinibooks.dao.member_mapper.selectMemberInfo",id);
+			
+			ss.close();
+			
+		} catch (IOException ioe) {
+			ioe.printStackTrace();
+		}//end catch
+		
+		return mid;
+	}//selectMemberInfo
+	
+	public int updateLoginDate(String id) throws SQLException {
+		int cnt = 0;
+		try {
+			//4. MyBatis Handler 얻기
+			SqlSession ss = getSessionFactory().openSession();
+			//5. id를 넣어 mapper xml에서 해당 쿼리를 parsing하여 실행하고 결과를 얻습니다.
+			cnt = ss.update("kr.co.jinibooks.dao.member_mapper.updateLoginDate",id);
+			//transaction 처리
+			ss.commit();
+			//Handler를 사용 완료 했다면 종료합니다.
+			ss.close();
+		} catch (IOException ioe) {
+			ioe.printStackTrace();
+		}//end catch
+		
+		return cnt;
+	}//updateLoginDate
 	
 }//class
