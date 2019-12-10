@@ -33,8 +33,9 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <%
-	  String id=(String)session.getAttribute("user_id");
-	%>
+	 String id=(String)session.getAttribute("user_id");
+	String book=(String)session.getAttribute("book_code");
+%>
 <script type="text/javascript">
 
 //모두체크
@@ -116,7 +117,6 @@ function bookDel(){
 				success:function(json){
 					alert("선택한 도서를 삭제했습니다");
 		    		 location.href="book_cartList.do?id=${user_id}";
-
 				}//success
 			});//ajax
      }//end if 
@@ -124,7 +124,7 @@ function bookDel(){
 
 
 function chkPrice(){
-	  var totalChk = document.getElementsByName("chHeader");
+	  var totalChk = document.getElementsByName("bookcheckboxheader");
 	  var codeChk = document.getElementsByName("code");
 	  var priceChk = document.getElementsByName("book_price");
 	  var chkCnt=0;
@@ -144,7 +144,7 @@ function chkPrice(){
 }//chkPrice
 
 $(function(){
-	$("#payBtn").click(function(){
+$("#payBtn").click(function(){
 		
 		var name=document.getElementsByName("code");
 		var buy=document.getElementsByName("buy");
@@ -161,7 +161,7 @@ $(function(){
 				}//end if
 			}//end if
 		}//end for
-		
+		alert(tag);
 		hiddenBuy.innerHTML = tag;
 		$("#CartBookFrm").submit();
 		
@@ -190,7 +190,7 @@ $(function(){
 <nav class="navbar navbar-light" id="nav_Content">
   <span class="navbar-brand">
     <img src="http://localhost:8080/team1_user_prj3/common/images/book_cart.png" width="30" height="30" class="d-inline-block">
-나의 책바구니
+'<%=id %>'님의 책바구니
   </span>
 </nav>
 <!--검색순서 끝-->
@@ -203,7 +203,7 @@ $(function(){
 </div>
 <div class="card-group">
   <div class="card">
-    	<div style="text-align: center; margin: 10px; font-weight: bold" >  구매리스트   </div>
+    	<div style="text-align: center; margin: 10px; font-weight: bold" >구매리스트   </div>
     <div class="card-body">
     <!--"구매"리스트 시작-->
 	
@@ -211,7 +211,7 @@ $(function(){
 			<table class="table table-hover" id="cartListTable">
 			    <tr style="background-color: #FFFFFF; border: 2px solid #f0f0f0;">
 			      <th style="width:70px;">
-			      <input type="checkbox"  id="chHeader" name="chHeader" onclick="allChk(this)"/>
+			      <input type="checkbox"  id="bookcheckboxheader" name="bookcheckboxheader" onclick="allChk(this)"/>
 			      </th>
 			      <th id="cartListHeader">도서명</th>
 			      <th id="cartListHeader">저자</th>
@@ -232,7 +232,7 @@ $(function(){
 			<c:if test="${cart.sale_class eq 'p'|| cart.sale_class eq 'p/r'}">
 				<tr>
 				  <td>
-				  <input type="checkbox" id="SaleChk" name="code" class="book_code"  value="${cart.code}"  onclick="chkPrice()">
+				  <input type="checkbox" id="saleChk" name="code" class="book_code"  value="${cart.code}"  onclick="chkPrice()">
 				  </td>
 				  <td style="width: 280px">
 				  <img src="http://localhost:8080/team1_user_prj3/common/images/images_book/${cart.img}" id="cartList_book_img">
@@ -256,7 +256,7 @@ $(function(){
 			<table class="table table-hover" id="cartListTable">
 			    <tr style="background-color: #FFFFFF; border: 2px solid #f0f0f0;">
 			      <th style="width:70px;">
-			      <input type="checkbox"  id="chHeader" name="chHeader" onclick="allChk(this)"/>
+			      <input type="checkbox"  id="bookcheckboxheader" name="bookcheckboxheader" onclick="allChk(this)"/>
 			      </th>
 			      <th id="cartListHeader">도서명</th>
 			      <th id="cartListHeader">저자</th>
@@ -309,6 +309,7 @@ $(function(){
 		    <p class="card-text">선택한 상품 개수 :<span id="chkCnt" class=col> </span> </p>
 		    <p class="card-text">선택한 상품의 금액 :<span id="chkPrice" class=col> </span> </p>
 		    <button type="button" class="btn btn-outline-secondary" id="payBtn">결제하기</button>
+		    <div id="hiddenBuy"></div>
 		  </div>
 		</div>
 		<!--총 결제금액 끝 -->

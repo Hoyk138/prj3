@@ -74,7 +74,7 @@ $(function(){
 		}//end else
 	})//click
 	
-	$("rentalBtn").click(function(){
+	$("#rentalBtn").click(function(){
 		if("${user_id}"!=""){
 			location.href="book_pay.do?buy=r"+params;
 		}else{

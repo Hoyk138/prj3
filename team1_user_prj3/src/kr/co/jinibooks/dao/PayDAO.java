@@ -133,6 +133,7 @@ public class PayDAO {
 			
 			for(int i=0; i<buyTemp.length; i++) {
 				paymentVO2 pv2=new paymentVO2(useCash,usePoint,id,payMethod,payDay,codeTemp[i],buyTemp[i]);
+				
 				query="insertPurchase";
 				if("r".equals(buyTemp[i])) {
 					query="insertRental";

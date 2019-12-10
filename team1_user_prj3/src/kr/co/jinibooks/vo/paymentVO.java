@@ -1,5 +1,7 @@
 package kr.co.jinibooks.vo;
 
+import java.util.Arrays;
+
 public class paymentVO {
 	
 	private int useCash,usePoint;
@@ -46,6 +48,12 @@ public class paymentVO {
 	}
 	public void setBuyClass(String[] buyClass) {
 		this.buyClass = buyClass;
+	}
+	@Override
+	public String toString() {
+		return "paymentVO [useCash=" + useCash + ", usePoint=" + usePoint + ", id=" + id + ", payMethod=" + payMethod
+				+ ", payDay=" + payDay + ", bookCode=" + Arrays.toString(bookCode) + ", buyClass="
+				+ Arrays.toString(buyClass) + "]";
 	}
 	
 	

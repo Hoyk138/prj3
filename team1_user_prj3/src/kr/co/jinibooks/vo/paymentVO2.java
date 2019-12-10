@@ -89,6 +89,13 @@ public class paymentVO2 {
 		this.buyClass = buyClass;
 	}
 
+
+	@Override
+	public String toString() {
+		return "paymentVO2 [useCash=" + useCash + ", usePoint=" + usePoint + ", id=" + id + ", payMethod=" + payMethod
+				+ ", payDay=" + payDay + ", bookCode=" + bookCode + ", buyClass=" + buyClass + "]";
+	}
+
 	
 
 	

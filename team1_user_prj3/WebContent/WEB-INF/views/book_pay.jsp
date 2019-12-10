@@ -157,7 +157,7 @@ $(function(){
 <!-- container 시작  -->	
 <div id="container">
     <form name="postFrm" id="postFrm" action="book_paySuccess.do" method="post">
-    <input type="hidden" name="id" value=<%=id %>/>
+    <input type="hidden" name="id" value="${user_id}"/>
 	<div class="row">
     <div class="col-8">
     <div>

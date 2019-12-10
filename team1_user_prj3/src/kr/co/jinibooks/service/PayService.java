@@ -75,7 +75,6 @@ public class PayService {
 	 * @param pv
 	 */
 	public void addPay(paymentVO pv) {
-		boolean flag=false;
 		
 		PayDAO pDao=PayDAO.getInstance();
 		
