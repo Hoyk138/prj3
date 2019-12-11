@@ -344,7 +344,7 @@ $(function(){
 	<div class="col">
 		<div id="notice1">
 			<strong>자주 하는 질문</strong>
-			<a href="#"><span style="font-size: 10px; color:#333; padding-left: 10px">더보기 ></span></a>
+			<a href="question.do"><span style="font-size: 10px; color:#333; padding-left: 10px">더보기 ></span></a>
 		</div>
 		<div id="notice2">
 			<div id="notice3_1">

@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.Reader;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.apache.ibatis.io.Resources;
@@ -67,6 +68,7 @@ public class PayDAO {
 		
 		String[]  codeTemp=cartData.getCode();
 		String[]  buyTemp=cartData.getBuy();
+		System.out.println(Arrays.toString(buyTemp));
 		String query="";
 		String code="";
 		try {
@@ -79,6 +81,7 @@ public class PayDAO {
 				query="selectRentalPayBook";
 			}//end if
 			spd=ss.selectOne(query, code);
+			System.out.println(spd.getBook_code());
 			spd.setBuy(buyTemp[i]);
 			selectPayList.add(spd);
 		}//end for

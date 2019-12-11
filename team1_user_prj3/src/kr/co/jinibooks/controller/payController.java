@@ -26,7 +26,7 @@ public class payController {
 	public String payBookForm(String cartValue, String id, CartPayVO cartData, Model model) {
 		PayService ps = new PayService();
 		cartVal=cartValue;
-		
+		System.out.println(cartData+"controller");
 		//결제창으로 도서를 띄우기
 		 model.addAttribute("payBook", ps.searchPayBook(cartData));
 		//넘어온 결제창의 도서들을 총 금액설정

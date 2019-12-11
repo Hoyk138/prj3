@@ -19,6 +19,6 @@
 	</insert>
 
 	<delete id="deleteCart" parameterType="kr.co.jinibooks.vo.CartDeleteVO2">
-		delete from cart where code=#{code} and id=#{id} 
+		delete from cart where code=#{cartCode} and id=#{id} 
 	</delete>
 </mapper>

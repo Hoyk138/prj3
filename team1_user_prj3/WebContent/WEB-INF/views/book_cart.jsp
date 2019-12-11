@@ -41,7 +41,7 @@
 //모두체크
 
 function allChk(obj){
-	var chkObj= document.getElementsByName("code");
+	var chkObj= document.getElementsByName("cartCode");
 	var rowCnt = chkObj.length - 1;
     var check = obj.checked;
    
@@ -77,7 +77,7 @@ function allChk(obj){
 function bookDel(){
 
   var userid = "";
-  var bookChk = document.getElementsByName("code");
+  var bookChk = document.getElementsByName("cartCode");
   var chked = false;
   var indexid = false;
   for(i=0; i < bookChk.length; i++){
@@ -102,7 +102,7 @@ function bookDel(){
     	  for(i=0; i < bookChk.length; i++){
     		   if(bookChk[i].checked){//선택되었다면
     			   bookvar[i]=bookChk[i].value;
-    			   params+="&code="+bookvar[i];
+    			   params+="&cartCode="+bookvar[i];
     		   }//end if
     		  }//end for
     		  
@@ -125,12 +125,15 @@ function bookDel(){
 
 function chkPrice(){
 	  var totalChk = document.getElementsByName("bookcheckboxheader");
-	  var codeChk = document.getElementsByName("code");
+	  var codeChk = document.getElementsByName("cartCode");
 	  var priceChk = document.getElementsByName("book_price");
+	  var code1 = document.getElementsByName("code");
 	  var chkCnt=0;
 	  var totalPrice=0;
 	  for(i=0; i < codeChk.length; i++){
 		   if(codeChk[i].checked){//선택되었다면
+			
+			   alert(document.CartBookFrm.code[i].value);
 			   chkCnt=chkCnt+1;
 			   totalPrice+=parseInt(priceChk[i].value);
 		   }//end if
@@ -146,15 +149,18 @@ function chkPrice(){
 $(function(){
 $("#payBtn").click(function(){
 		
-		var name=document.getElementsByName("code");
+		var name=document.getElementsByName("cartCode");
 		var buy=document.getElementsByName("buy");
 		var hiddenBuy=document.getElementById("hiddenBuy");
+		
 		var tag = "";
+		/* 	"<input type='hidden' name='code' value='${cart.book_code}'/>"; */
 		
 		for(var i=0; i<name.length; i++){
 			if(name[i].checked){
 				if(name[i].getAttribute('id') == 'saleChk'){
 					tag += "<input type='hidden' name='buy' value='p'/>";
+					/* document.CartBookFrm.code[i].value='${cart.book_code}'; */
 				}//end if
 				if(name[i].getAttribute('id') == 'rentalChk'){
 					tag += "<input type='hidden' name='buy' value='r'/>";
@@ -196,6 +202,7 @@ $("#payBtn").click(function(){
 <!--검색순서 끝-->
 
 <form name="CartBookFrm" id="CartBookFrm" action="book_pay.do" method="post">
+<input type="hidden" name="id" value="${user_id}">
 <div class="row"  style="border-bottom: 1px solid #f0f0f0; width: 1460px; margin:30px;">
 		<div style="width: 100px; position:relative; float:right; margin-bottom: 15px;">
 			<input type="button"  class="btn btn-outline-danger" value="선택삭제" id="deleteBtn" onclick="bookDel()"/>
@@ -232,15 +239,15 @@ $("#payBtn").click(function(){
 			<c:if test="${cart.sale_class eq 'p'|| cart.sale_class eq 'p/r'}">
 				<tr>
 				  <td>
-				  <input type="checkbox" id="saleChk" name="code" class="book_code"  value="${cart.code}"  onclick="chkPrice()">
+				  <input type="checkbox" id="saleChk" name="cartCode" class="book_code"  value="${cart.code}"  onclick="chkPrice()">
 				  </td>
 				  <td style="width: 280px">
 				  <img src="http://localhost:8080/team1_user_prj3/common/images/images_book/${cart.img}" id="cartList_book_img">
 				  <br/>${cart.title} </td>
 				  <td>${cart.author}</td>
 				  <td> <input type="hidden" name="book_price" value="${cart.sale_price} "/> ${cart.sale_price} 원</td> 
-				  
 				</tr>
+				    <input type="hidden" name="code" value="${cart.book_code}">
 			</c:if>
 		</c:forEach>
 		</table>
@@ -280,7 +287,7 @@ $("#payBtn").click(function(){
 			   <c:if test="${cart.sale_class eq 'r' || cart.sale_class eq 'p/r'}">
 			    <tr>
 			      <td> 
-			      <input type="checkbox" id="rentalChk" name="code" class="book_code"  value="${cart.code}" onclick="chkPrice()">
+			      <input type="checkbox" id="rentalChk" name="cartCode" class="book_code"  value="${cart.code}" onclick="chkPrice()">
 			      </td>
 			      <td style="width: 280px">
 			      <img src="http://localhost:8080/team1_user_prj3/common/images/images_book/${cart.img}" id="cartList_book_img">
@@ -289,6 +296,7 @@ $("#payBtn").click(function(){
 			      <td>7일</td>
 			      <td> <input type="hidden" name="book_price" value="${cart.rental_price} "/>${cart.rental_price} 원</td> 
 			    </tr>
+			   <input type="hidden" name="code" value="${cart.book_code}">
 			   </c:if>
 		</c:forEach>
 			</table>
@@ -309,6 +317,7 @@ $("#payBtn").click(function(){
 		    <p class="card-text">선택한 상품 개수 :<span id="chkCnt" class=col> </span> </p>
 		    <p class="card-text">선택한 상품의 금액 :<span id="chkPrice" class=col> </span> </p>
 		    <button type="button" class="btn btn-outline-secondary" id="payBtn">결제하기</button>
+		    
 		    <div id="hiddenBuy"></div>
 		  </div>
 		</div>

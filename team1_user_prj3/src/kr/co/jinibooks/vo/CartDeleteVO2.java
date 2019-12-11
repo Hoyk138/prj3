@@ -2,11 +2,11 @@ package kr.co.jinibooks.vo;
 
 public class CartDeleteVO2 {
 	private String id;
-	private String code;
-	public CartDeleteVO2(String id, String code) {
+	private String cartCode;
+	public CartDeleteVO2(String id, String cartCode) {
 		super();
 		this.id = id;
-		this.code = code;
+		this.cartCode = cartCode;
 	}
 	public String getId() {
 		return id;
@@ -14,11 +14,13 @@ public class CartDeleteVO2 {
 	public void setId(String id) {
 		this.id = id;
 	}
-	public String getCode() {
-		return code;
+	public String getCartCode() {
+		return cartCode;
 	}
-	public void setCode(String code) {
-		this.code = code;
+	public void setCartCode(String cartCode) {
+		this.cartCode = cartCode;
 	}
+
+	
 	
 }

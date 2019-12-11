@@ -22,8 +22,8 @@ public class PayService {
 	public List<SelectPayDomain> searchPayBook(CartPayVO cartData){
 		List<SelectPayDomain> payBookList=null;
 		PayDAO pDao=PayDAO.getInstance();
-		
 		try {
+			System.out.println(cartData+"service");
 			payBookList=pDao.selectPayBook(cartData);
 		} catch (SQLException e) {
 			e.printStackTrace();

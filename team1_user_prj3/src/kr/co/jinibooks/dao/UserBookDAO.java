@@ -371,7 +371,7 @@ public class UserBookDAO {
 			SqlSession ss = getSessionFactory().openSession();
 			
 			String id = cdVO.getId();
-			String[] code = cdVO.getCode();
+			String[] code = cdVO.getCartCode();
 			
 			for(int i=0; i<code.length; i++) {
 				CartDeleteVO2 cdVO2 = new CartDeleteVO2(id,code[i]);
