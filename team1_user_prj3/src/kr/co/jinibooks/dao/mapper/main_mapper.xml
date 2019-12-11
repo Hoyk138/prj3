@@ -63,10 +63,10 @@
   </select>
   
   <!-- 메인 (공지사항 리스트) -->
-  <select id="mainNoticeList" resultType="String">
-  	select subject
-	from(select rownum r, subject
-			from(select subject
+  <select id="mainNoticeList" resultType="kr.co.jinibooks.domain.MainNoticeDomain">
+  	select num, subject
+	from(select rownum r, num, subject
+			from(select num, subject
 						from notice
 						order by w_day desc))
 	where r between 1 and 5

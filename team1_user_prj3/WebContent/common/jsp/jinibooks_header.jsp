@@ -130,7 +130,7 @@ function enterkey() {
 			   <a class="py-3 d-none d-md-inline-block" href="/team1_user_prj3/home.html"  id="cateName_right"><span>홈</span></a>
 			   <a class="py-3 d-none d-md-inline-block" href="/team1_user_prj3/book_newList.do"  id="cateName_right"><span>신간</span></a>
 			   <a class="py-3 d-none d-md-inline-block" href="/team1_user_prj3/book_bestList.do" id="cateName_right"><span >베스트</span></a>
-			   <a class="py-3 d-none d-md-inline-block" href="#"  id="cateName_right"><span>공지사항</span></a>
+			   <a class="py-3 d-none d-md-inline-block" href="/team1_user_prj3/notice.do"  id="cateName_right"><span>공지사항</span></a>
 			</div>
 		</div>
 	</div>

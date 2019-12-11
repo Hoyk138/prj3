@@ -4,6 +4,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 import kr.co.jinibooks.dao.UserBookDAO;
+import kr.co.jinibooks.domain.MainNoticeDomain;
 import kr.co.jinibooks.domain.cate_best_bookDomain;
 import kr.co.jinibooks.domain.mainBookDomain;
 import kr.co.jinibooks.domain.newBookDomain;
@@ -101,8 +102,8 @@ public class UserBookService {
 	 * 메인- 공지사항 리스트
 	 * @return
 	 */
-	public List<mainBookDomain> searchNotice(){
-		List<mainBookDomain> mainNoticeList=null;
+	public List<MainNoticeDomain> searchNotice(){
+		List<MainNoticeDomain> mainNoticeList=null;
 		
 		UserBookDAO ubDao=UserBookDAO.getInstance();
 		try {

@@ -69,13 +69,13 @@ $(function(){
 			   QUICK MENU
 			  </a>
 			  
-			  <a href="notice_faq.jsp" class="list-group-item list-group-item-action">
+			  <a href="/team1_user_prj3/faq.do" class="list-group-item list-group-item-action">
 			  <img src="http://localhost:8080/team1_user_prj3/common/images/images_main/aside_Q&A.png" width="30px" height="30px"/><br/> 고객센터
 			  </a>
-			  <a href="notice_questionList.jsp" class="list-group-item list-group-item-action">
+			  <a href="/team1_user_prj3/question.do" class="list-group-item list-group-item-action">
 			  <img src="http://localhost:8080/team1_user_prj3/common/images/images_main/aside_inquiry.png" width="30px" height="30px"/><br/> 1:1 문의
 			  </a>
-			  <a href="notice_list.jsp" class="list-group-item list-group-item-action">
+			  <a href="/team1_user_prj3/notice.do" class="list-group-item list-group-item-action">
 			  <img src="http://localhost:8080/team1_user_prj3/common/images/images_main/aside_notice.png" width="40px" height="40px"/><br/> 공지사항
 			  </a>
 			 <!--  <a href="#" class="list-group-item list-group-item-action">
@@ -332,7 +332,7 @@ $(function(){
 		<ul type="disc">
 		<c:forEach var="notice" items="${mainNotice}">
 			<li style="margin-bottom: 5px">
-				<a href="#"><span style="color:#333"><c:out value="${notice}"></c:out></span></a>
+				<a href="detail.do?num=${notice.num}"><span style="color:#333"><c:out value="${notice.subject}"/></span></a>
 			</li>
 			</c:forEach>
 		</ul>

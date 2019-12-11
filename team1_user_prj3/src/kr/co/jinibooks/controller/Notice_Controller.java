@@ -20,34 +20,33 @@ import kr.co.jinibooks.vo.NoticeVO;
 public class Notice_Controller {
 	
 	@RequestMapping(value="notice.do",method= {GET,POST})
-	public String searchList(NoticeSearchVO sVO, 
+	public String searchList(NoticeSearchVO nsVO, 
 			@RequestParam(required = false, defaultValue = "1")String current_page, Model model) {
 		//indexList에서 제공하는 url인 current_page가 조회에 사용되는 sVO의 currentPage와 다름으로 
 		//current_page를 parameter로 받고 sVO에 set하여 줍니다.
-		sVO.setCurrentPage(Integer.parseInt(current_page));
+		nsVO.setCurrentPage(Integer.parseInt(current_page));
 		
 		//모델2에서는 객체를 자신이 만들지만
 		//프레임워크에서는 프레임 워크가 만들어 준다.
 		//쿼리에서 VO가 null인지 확인할 필요가 없다.
 		
 		NoticeBoardListService bls = new NoticeBoardListService();
-		int totalCount = bls.totalCount(sVO);
-		
+		int totalCount = bls.totalCount(nsVO);
 		
 		int pageScale = bls.pageScale();
 		int totalPage = bls.totalPage(pageScale, totalCount);
-		int startNum = bls.startNum(pageScale, sVO.getCurrentPage());
+		int startNum = bls.startNum(pageScale, nsVO.getCurrentPage());
 		int endNum = bls.endNum(pageScale, startNum);
 		
 		
 		//계산된 값으로 조회에 사용될 수 있게 VO에 설정합니다.
-		sVO.setStartNum(startNum);
-		sVO.setEndNum(endNum);
+		nsVO.setStartNum(startNum);
+		nsVO.setEndNum(endNum);
 		
-		List<NoticeListDomain> boardList = bls.searchList(sVO);
+		List<NoticeListDomain> boardList = bls.searchList(nsVO);
 
-		BoardIndexListVO ilVO = new BoardIndexListVO(sVO.getCurrentPage(), totalPage, "notice.do");
-		String indexList = bls.indexList(ilVO,sVO);
+		BoardIndexListVO ilVO = new BoardIndexListVO(nsVO.getCurrentPage(), totalPage, "notice.do");
+		String indexList = bls.indexList(ilVO,nsVO);
 		
 		model.addAttribute("boardList", boardList);//게시물 리스트
 		model.addAttribute("indexList", indexList);//인덱스 리스트
@@ -55,7 +54,6 @@ public class Notice_Controller {
 		return "board/user_notice";
 //		return "day1202/list";
 	}//searchList
-	
 	
 	@RequestMapping(value = "detail.do",method = GET)
 	public String noticedetail(@RequestParam(required = false,defaultValue = "N_000000")String num,Model model) {
@@ -80,15 +78,11 @@ public class Notice_Controller {
 		return "board/admin_notice_success";
 	}//addEmpProcess
 	
-	
 	@RequestMapping(value = "faq.do", method = {GET,POST})
 	public String Faq() {
 		
 		return  "board/user_notice_faq";
 	}//addEmpForm
-	
-	
-
 	
 	@RequestMapping(value = "delete_process.do", method = POST)
 	public String DeleteNoticeProcess(NoticeVO ceiVO, Model model) {
@@ -104,5 +98,4 @@ public class Notice_Controller {
 		return "board/admin_notice_success";
 	}//addEmpProcess
 	
-
 }//class
