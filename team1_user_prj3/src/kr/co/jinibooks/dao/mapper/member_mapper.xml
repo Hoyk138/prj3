@@ -27,6 +27,12 @@ from member
 where id = #{ inputID } and passwd = #{ inputPW }
 </select>
 
+<select id="selectIDWithEmail" resultType="String" parameterType="String">
+select id
+from member
+where email = #{ email }
+</select>
+
 <resultMap type="MemberInfoDomain" id="esdResult">
   <result column="id" property="id"/>
   <result column="name" property="name"/>

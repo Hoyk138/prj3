@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"
     info="아이디 찾기 성공 페이지"
     %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -67,7 +68,7 @@ $(function(){
   <div class="form-group row">
     <div class="col-sm-10" >
     	<div id="id">
-    	<label class="form-check-label" for="gridCheck1" id="userId">ss****</label>
+    	<label class="form-check-label" for="gridCheck1" id="userId"><c:out value="${coveredID}"></c:out></label>
     	</div>
     </div>
   </div>

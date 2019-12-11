@@ -72,7 +72,7 @@ function enterkey() {
 		</div>
 		 <div id="hContent2">
 		 <%if(id==null){ %>
-			<a href="/team1_user_prj3/member/user_join.do" id="join">회원가입</a>
+			<a href="/team1_user_prj3/member/join.do" id="join">회원가입</a>
 			<a href="/team1_user_prj3/member/login.do" id="login">로그인</a>
 		<%}else{ %>
 			<a href="/team1_user_prj3/member/mypage/main.do" id="myPage">마이페이지</a>

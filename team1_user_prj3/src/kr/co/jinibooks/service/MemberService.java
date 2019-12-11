@@ -124,6 +124,23 @@ public class MemberService {
 		return json;
 	}//searchIDPW
 	
+	public JSONObject searchIDWithEmail(String inputEmail) {
+		JSONObject json = new JSONObject();
+		
+		String outputID;
+		try {
+			outputID = mDAO.selectIDWithEmail(inputEmail);
+			//System.out.println("서비스: "+outputID);
+			
+			// 찾아낸 데이터로 JSONObject 생성
+			json.put("outputID", outputID);
+		} catch (SQLException sqle) {
+			sqle.printStackTrace();
+		}//end catch
+		
+		return json;
+	}//searchIDWithEmail
+	
 	public MemberInfoDomain searchMemberInfo(String id) {
 		MemberInfoDomain mid = null;
 		

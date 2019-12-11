@@ -27,10 +27,10 @@ public class MemberController {
 	@Autowired(required = false)
 	private MemberService memberService;
 	
-	@RequestMapping(value="member/user_join.do",method=GET)
+	@RequestMapping(value="member/join.do",method=GET)
 	public String userJoin(Model model) {
 		
-		return "member/userJoin";
+		return "member/join";
 	}//termsOfUse
 	
 	@RequestMapping(value="member/id_chk.do",method=POST)
@@ -109,6 +109,50 @@ public class MemberController {
 		
 		return json.toJSONString();
 	}//loginProcess
+	
+	@RequestMapping(value="member/id_search.do",method=GET)
+	public void idSearch() {
+		
+	}//idSearch
+
+	@RequestMapping(value="member/id_search_process.do",method=POST)
+	@ResponseBody
+	public String idSearchProcess(String inputEmail) {
+		//System.out.println(inputEmail);
+		
+		//서비스를 사용하여 업무처리 결과를 받는다
+		JSONObject json = memberService.searchIDWithEmail(inputEmail);
+		//System.out.println(json);
+		
+		return json.toJSONString();
+	}//idSearchProcess
+
+	@RequestMapping(value="member/id_search_success.do",method=POST)
+	public void idSearchSuccess(String outputID, Model model) {
+		//System.out.println(outputID);
+		
+		//사용자의 이메일에 아이디를 보내 줍니다.
+		
+		//아이디를 숨기고 model에 넣어 줍니다.
+		int length = outputID.length();
+		String coveredID = outputID.substring(0, 2);
+		for (int i = 0; i < length-2; i++) {
+			coveredID = coveredID.concat("*");
+		}//end for
+		
+		model.addAttribute("coveredID", coveredID);
+		
+	}//idSearchSuccess
+	
+	@RequestMapping(value="member/pw_search.do",method=GET)
+	public void pwSearch() {
+		
+	}//pwSearch
+	
+	@RequestMapping(value="member/pw_search_success.do",method=POST)
+	public void pwSearchSuccess() {
+		
+	}//pwSearchSuccess
 	
 	@RequestMapping(value="member/logout_process.do",method=POST)
 	@ResponseBody

@@ -512,7 +512,7 @@ $(function(){
       <input type="email" class="form-control" id="inputEmail" name="inputEmail" placeholder="이메일 주소"/>
       <span class="form-control" id="emailEmptyWarn">이메일을 입력해주세요.</span>
       <span class="form-control" id="emailValidateWarn">올바른 이메일 형식이 아닙니다.</span>
-           <span class="form-control" id="emailOverlapWarn">이미 사용중인 이메일입니다.</span>
+      <span class="form-control" id="emailOverlapWarn">이미 사용중인 이메일입니다.</span>
       <span class="form-control" id="emailOk">사용 가능한 이메일입니다.</span>
     </div>
   </div>

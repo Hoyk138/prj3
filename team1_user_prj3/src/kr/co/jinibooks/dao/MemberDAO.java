@@ -125,6 +125,24 @@ public class MemberDAO {
 		
 		return name;
 	}//selectIDPW
+	
+	public String selectIDWithEmail(String inputEmail) throws SQLException {
+		String outputID = "";
+		
+		try {
+			//4. MyBatis Handler 얻기
+			SqlSession ss = getSessionFactory().openSession();
+			//5. id를 넣어 mapper xml에서 해당 쿼리를 parsing하여 실행하고 결과를 얻습니다.
+			outputID = ss.selectOne("kr.co.jinibooks.dao.member_mapper.selectIDWithEmail",inputEmail);
+			
+			ss.close();
+			
+		} catch (IOException ioe) {
+			ioe.printStackTrace();
+		}//end catch
+		
+		return outputID;
+	}//selectIDWithEmail
 
 	public MemberInfoDomain selectMemberInfo(String id) throws SQLException {
 		MemberInfoDomain mid = null;

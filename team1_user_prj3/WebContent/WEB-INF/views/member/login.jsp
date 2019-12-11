@@ -113,7 +113,7 @@ $(function(){
 	$("#loginBtn").click(login);//click
 	
 	$("#joinBtn").click(function(){
-		location.href="user_join.do";
+		location.href="join.do";
 	});//click
 });
 </script>
@@ -157,8 +157,8 @@ $(function(){
         <label class="form-check-label" for="gridCheck1" id="loginCheckLabel">
           로그인 상태 유지
         </label>
-        <a href="#" id="idSearch">아이디 찾기</a>
-        <a href="#" id="pwSearch">비밀번호 재설정</a>
+        <a href="id_search.do" id="idSearch">아이디 찾기</a>
+        <a href="pw_search.do" id="pwSearch">비밀번호 재설정</a>
       </div>
     </div>
   </div>
