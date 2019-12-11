@@ -205,7 +205,7 @@ $(function(){
 		<div class="card-deck" id="showBook">
 		<c:forEach var="popular" items="${mainPopular}">
 		  <div class="card" style="min-height:400px; border:1px solid #d4edda; background-color: #d4edda;">
-		    <a href="book_detail.do?code=${popular.book_code}">
+		    <a href="book_detail.do?code=${popular.book_code}&cateCode=${newbook.code}">
 		    	<img src="http://localhost:8080/team1_user_prj3/common/images/images_book/${popular.img}" class="card-img-top" alt="..." width="100px" height="250px" onerror="javascript:this.src='http://localhost:8080/team1_user_prj3/common/images/images_book/noImg.jpg'">
 		    </a>
 		    <div class="card-body">
