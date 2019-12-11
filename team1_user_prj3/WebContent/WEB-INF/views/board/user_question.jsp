@@ -89,8 +89,8 @@ $(function() {
     <tr style="max-height: 40px;">
       <th scope="row">
       <c:out value="${fn:substring(blVO.num,2,8)}"/></th>
-      <td><a href="detail2.do?num=${ blVO.num}"><c:out value="${blVO.subject}"/></a></td>
-      <td><c:out value="${blVO.answer_flag}"/></td>
+      <td><a href="detail2.do?num=${ blVO.num}" style="color: black;"><c:out value="${blVO.subject}"/></a></td>
+      <td style="color: ${ blVO.answer_flag eq '미답변'?'#FF0000':'#0000FF'}"><c:out value="${blVO.answer_flag}"/></td>
       <td><c:out value="${blVO.w_day}"/></td>
     </tr>
   </c:forEach>

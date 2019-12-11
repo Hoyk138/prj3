@@ -213,8 +213,6 @@ public class QuestionListService {
 	public boolean insertnotice(QuestionVO ceiVO){
 		boolean flag = false;
 		
-		ceiVO.setId("user1");
-		System.out.println(ceiVO);
 		//DAO를 사용하여 
 		QuestionDAO ceDAO = QuestionDAO.getInstance();
 		try {

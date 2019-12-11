@@ -19,7 +19,7 @@
 <select id="selectBoardList2" resultType="kr.co.jinibooks.domain.QuestionListDomain" 
         parameterType="kr.co.jinibooks.vo.QuestionSearchVO">
         
-select num,id,subject,content,ATTACH_FILE_NAME,to_char(w_day,'yyyy-mm-dd') w_day,ANSWER,ANSWER_FLAG,ADMIN_ID
+select num,id,subject,content,ATTACH_FILE_NAME,to_char(w_day,'yyyy-mm-dd') w_day,ANSWER,decode(ANSWER_FLAG,'Y','답변','N','미답변') answer_flag,ADMIN_ID
 from (select rownum r, num,id,subject,content,ATTACH_FILE_NAME,W_DAY,ANSWER,ANSWER_FLAG,ADMIN_ID
 	  from (select num,id,subject,content,ATTACH_FILE_NAME,W_DAY,ANSWER,ANSWER_FLAG,ADMIN_ID
 			from INQUIRY

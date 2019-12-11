@@ -34,6 +34,9 @@
 	#notice4{font-size: 13px; text-align: center} */
 	/* container 끝 */
 	
+	#ff{ font-size: 20px; font-weight: bold;}
+	#f2{ font-weight: bold;}
+	
 </style>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
@@ -155,20 +158,20 @@ $(function(){
 무엇을 도와드릴까요?
 </div>
 
-<div style="clear:both;  width: 600px; height: 70px; border-bottom: 1px solid #333" id="ff">
-문의 내용
+<div style="clear:both;  width: 600px; height: 70px; border-bottom: 1px solid #333" id="f1">
+
 <br>
 자주 찾는 도움말
 </div>
 
-<div style="clear:both;  width: 600px; height: 200px; border-bottom: 1px solid #333" id="ff">
+<div style="clear:both;  width: 600px; height: 200px; border-bottom: 1px solid #333" id="f2">
 
 <div class="accordion" id="accordionExample" style="margin-top: 20px; font-size: 15">
   <div class="card">
     <div class="card-header" id="headingOne">
       <h2 class="mb-0">
          <span style="font-size: 15px"> 1:1 문의전 꼭 확인해 주세요!</span>
-        <button class="btn btn-link"  type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" id="btn1" style="float: right;">
+        <button class="btn btn-link"  type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" id="btn1" style="float: right; color: black;">
         ▼
         </button>
       </h2>
@@ -176,7 +179,8 @@ $(function(){
 
     <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample" style="margin-top: 20px; font-size: 15">
       <div class="card-body">
-		탈퇴에 대해서는 답변이 어려우니 고객센터로 직접 연락주세요 전화번호는 000-00-000-000
+		탈퇴에 대해서는 답변이 어려우니 고객센터로 직접 연락주세요 <br>
+		전화번호는 02-2582-3349 입니다.
       </div>
     </div>
   </div>
@@ -184,14 +188,15 @@ $(function(){
     <div class="card-header" id="headingTwo">
       <h2 class="mb-0">
          <span style="font-size: 15px"> 충전이 안됩니다.</span>
-        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" id="btn2" style="float: right;">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" id="btn2" style="float: right; color: black;">
       	▼
         </button>
       </h2>
     </div>
     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
       <div class="card-body">
-      충전이 안되면 전화주세요!
+      충전이 안되면 고객센터로 연락 부탁드립니다. <br>
+      02-2582-3349으로 연락주세요.
       </div>
     </div>
   </div>
@@ -200,7 +205,7 @@ $(function(){
     <div class="card-header" id="headingThree">
       <h2 class="mb-0">
       <span style="font-size: 15px"> 찾는 책이 없어요!</span>
-        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" id="btn3" style="float: right;">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" id="btn3" style="float: right; color: black;">
       	▼
         </button>
       </h2>
@@ -217,14 +222,15 @@ $(function(){
     <div class="card-header" id="headingFour">
       <h2 class="mb-0">
       <span style="font-size: 15px"> 결제 방식이 틀리다고 나와요</span>
-        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour" id="btn4" style="float: right;">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour" id="btn4" style="float: right; color: black;">
       	▼
         </button>
       </h2>
     </div>
     <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample" ">
       <div class="card-body">
-      고객센터로 전화주세요
+      고객센터로 연락 부탁드립니다.<br>
+      연락처는 02-2582-3349 입니다.
       </div>
     </div>
   </div>
@@ -234,7 +240,7 @@ $(function(){
     <div class="card-header" id="headingFive">
       <h2 class="mb-0">
       <span style="font-size: 15px"> 아이디를 바꾸고 싶어요</span>
-        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive" id="btn5" style="float: right;">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive" id="btn5" style="float: right; color: black;">
       	▼
         </button>
       </h2>

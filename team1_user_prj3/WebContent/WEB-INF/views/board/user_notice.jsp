@@ -35,7 +35,7 @@
 	#notice3_3{ text-align: center; vertical-align: middle; margin: 20px auto; font-size: 20px; }
 	#notice4{font-size: 13px; text-align: center} */
 	/* container 끝 */
-
+	#notice{ font-size: 30px; font-weight: bold;}
 </style>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
@@ -61,9 +61,8 @@ $(function(){
 <jsp:include page="../../../common/jsp/jinibooks_noticeMenu.jsp"/>
 
 <div id="MainContainer" class="col-8">
-<div id="Wrap" style="min-width: 1000px; margin-left: 0px;">
-
-<div id="notice" style="text-align: center; font-size: 30px; font-weight: bold">공지사항</div><br>
+<div id="Wrap" style="min-width: 1000px; float:left; margin-left: 0px;">
+<div id="notice" style="text-align: center; margin-top: 40px;">공지사항</div><br>
 <table class="table table-hover" style="text-align: center;" border="1px;">
  <thead>
     <tr>
@@ -78,7 +77,7 @@ $(function(){
     <tr style="max-height: 40px;">
       <th scope="row">
       <c:out value="${fn:substring(blVO.num,2,8)}"/></th>
-      <td><a href="detail.do?num=${ blVO.num}"><c:out value="${blVO.subject}"/></a></td>
+      <td><a href="detail.do?num=${ blVO.num}" style="color: black;"><c:out value="${blVO.subject}"/></a></td>
       <td><c:out value="${blVO.w_day}"/></td>
     </tr>
   </c:forEach>
