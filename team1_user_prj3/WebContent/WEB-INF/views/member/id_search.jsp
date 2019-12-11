@@ -6,8 +6,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="http://localhost:8080/servlet_prj/common/css/main.css"/>
+<title>아이디 찾기</title>
+<link rel="stylesheet" type="text/css" href="http://localhost:8080/team1_user_prj3/common/css/main.css"/>
 <style type="text/css">
 	#class4Wrap{height: 750px; margin:0px auto; }
 	/* 헤더 시작 */
@@ -134,7 +134,7 @@ $(function(){
 	<div id="hLogo">
 	<nav>
  		<a class="navbar-brand" href="#">
-   		<img src="http://localhost:8080/Team1_prj3/user_book/images/header_logo.PNG" class="d-inline-block align-top" alt=""><span id="logo">JINI BOOKS</span>
+   		<img src="http://localhost:8080/team1_user_prj3/common/images/header_logo.PNG" class="d-inline-block align-top" alt=""><span id="logo">JINI BOOKS</span>
 		</a>
 	</nav>
 	</div>
@@ -152,6 +152,7 @@ $(function(){
   <div class="form-group row">
     <div class="col-sm-10">
       <input type="text" class="form-control" id="inputEmail" name="inputEmail" placeholder="이메일주소">
+      <input type="text" style="display: none;"/>
     </div>
   </div>
 <!--   <div class="form-group row">

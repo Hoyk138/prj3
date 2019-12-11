@@ -35,7 +35,9 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script type="text/javascript">
 $(function(){
-	
+	$("#mainBtn").click(function() {
+		location.href = "/team1_user_prj3/home.do";
+	});//click
 });
 </script>
 </head>	
@@ -69,7 +71,7 @@ $(function(){
   </div>
   <div class="form-group row">
     <div class="col-sm-10" id="btn">
-      <button type="submit" class="btn btn-danger" id="mainBtn">메인으로</button>
+      <button type="button" class="btn btn-danger" id="mainBtn">메인으로</button>
     </div>
   </div>
 </div>

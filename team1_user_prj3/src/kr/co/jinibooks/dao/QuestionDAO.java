@@ -102,6 +102,7 @@ public class QuestionDAO {
 			SqlSession ss=getSessionFactory().openSession();
 			//입력되는 값 없이 모든 레코드를 조회
 			empList=ss.selectList("multiColumnMultiRow",30);
+			ss.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -117,6 +118,7 @@ public class QuestionDAO {
 		try {
 			ss = getSessionFactory().openSession();
 			bld=ss.selectOne("QuestionDetail",num);
+			ss.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

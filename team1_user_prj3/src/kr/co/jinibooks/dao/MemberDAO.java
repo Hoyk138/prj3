@@ -170,7 +170,13 @@ public class MemberDAO {
 			//4. MyBatis Handler 얻기
 			SqlSession ss = getSessionFactory().openSession();
 			//5. id를 넣어 mapper xml에서 해당 쿼리를 parsing하여 실행하고 결과를 얻습니다.
+			System.out.println(idAndEmailAndTempPWVO.getInputID());
+			System.out.println(idAndEmailAndTempPWVO.getInputEmail());
+			System.out.println(idAndEmailAndTempPWVO.getTempPW());
 			cnt = ss.update("kr.co.jinibooks.dao.member_mapper.updateTempPW", idAndEmailAndTempPWVO);
+			System.out.println("업데이트 통과");
+			ss.commit();
+			System.out.println("커밋 통과");
 			
 			ss.close();
 			

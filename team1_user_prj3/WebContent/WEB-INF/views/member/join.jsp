@@ -583,18 +583,25 @@ $(function(){
     <div class="custom-control custom-checkbox" id="agree">
   		<input type="checkbox" class="custom-control-input" id="customCheck1" name="chkAgreement"/>
   		<label class="custom-control-label" for="customCheck1"><span id="agreeLabel">이용 약관 동의</span></label>
-  		<a href="terms_of_use.do"><span id="term1">약관 보기</span></a>
+  		<a href="javascript:void(window.open('terms_of_use.do', '이용 약관','width=#, height=#'))">
+  		    <span id="term1">약관 보기</span>
+  		</a>
 	</div>
     <div class="custom-control custom-checkbox" id="agree">
   		<input type="checkbox" class="custom-control-input" id="customCheck2" name="chkAgreement"/>
   		<label class="custom-control-label" for="customCheck2"><span id="agreeLabel">개인 정보 처리 방침 동의</span></label>
-  		<a href="privacy.do"><span id="term2">약관 보기</span></a>
+  		<a href="javascript:void(window.open('privacy.do', '개인 정보 처리 방침','width=#, height=#'))">
+  		    <span id="term2">약관 보기</span>
+  		</a>
 	</div>
     <div class="custom-control custom-checkbox" id="agree">
   		<input type="checkbox" class="custom-control-input" id="customCheck3" name="chkAgreement"/>
   		<label class="custom-control-label" for="customCheck3"><span id="agreeLabel">개인 정보 제3자 제공 동의</span></label>
-  		<a href="privacy.do"><span id="term3">약관 보기</span></a>
+  		<a href="javascript:void(window.open('privacy.do', '개인 정보 처리 방침','width=#, height=#'))">
+  		    <span id="term3">약관 보기</span>
+  		</a>
 	</div>
+	<!-- 새창으로 띄우기 [출처] 새창 띄우는 방법들과 제어|작성자 곰구리 -->
     </div>
     <!-- <span class="form-control" id="agreementWarn">약관에 모두 동의해주세요.</span> -->	
   </div>

@@ -106,6 +106,7 @@ public class PayDAO {
 		try {
 			SqlSession ss=getSessionFactory().openSession();
 			selectcpd=ss.selectOne("selectCashPoint",id);
+			ss.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}//end catch

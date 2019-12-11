@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>비밀번호 재설정</title>
 <link rel="stylesheet" type="text/css" href="http://localhost:8080/servlet_prj/common/css/main.css"/>
 <style type="text/css">
 	#class4Wrap{height: 750px; margin:0px auto; }
@@ -89,10 +89,10 @@ $(function(){
 					    				console.log("에러메세지: "+xhr.statusText);
 			    					},
 			    					success:function(json_obj){
-			    						var outputID = json_obj.outputID;
-			    						//alert(outputID);
-					    				if(outputID == ""){
-					    				    alert("죄송합니다. 비밀번호 확인 도중 문제가 발생하였습니다.");
+			    						var flag = json_obj.flag;
+			    						//alert(flag);
+					    				if(!flag){
+					    				    alert("죄송합니다. 비밀번호 서비스 도중 문제가 발생하였습니다.");
 						                    emailChk = false;
 					    				} else {
 					    					var form = $('<form></form>');

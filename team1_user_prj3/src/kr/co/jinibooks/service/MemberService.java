@@ -171,6 +171,7 @@ public class MemberService {
 		
 		//비밀번호를 새로 만들고(8자 이상, 영문/숫자/특수문자 중 2가지 이상 입력해주세요.)
 		String tempPW = getRamdomPassword(8);
+		//System.out.println("tempPW: "+tempPW);
 		
 		//암호화 하여 DB에 기록하고
 		String encryptPW = "";
@@ -178,6 +179,7 @@ public class MemberService {
 			String key ="1111111111111111";
 			DataEncrypt de = new DataEncrypt(key);
 			encryptPW = de.encryption(tempPW);
+			//System.out.println("encryptPW: "+encryptPW);
 
 			idAndEmailAndTempPWVO.setTempPW(encryptPW);
 			

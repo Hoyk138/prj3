@@ -167,7 +167,7 @@ public class MemberController {
 	@RequestMapping(value="member/pw_search_process.do",method=POST)
 	@ResponseBody
 	public String pwSearchProcess(IDandEmailandTempPWVO idAndEmailAndTempPWVO) {
-		System.out.println(idAndEmailAndTempPWVO);
+		//System.out.println(idAndEmailAndTempPWVO);
 		
 		//서비스를 사용하여 업무처리 결과를 받는다
 		JSONObject json = memberService.modifyPW(idAndEmailAndTempPWVO);
