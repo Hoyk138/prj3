@@ -133,7 +133,6 @@ function chkPrice(){
 	  for(i=0; i < codeChk.length; i++){
 		   if(codeChk[i].checked){//선택되었다면
 			
-			   alert(document.CartBookFrm.code[i].value);
 			   chkCnt=chkCnt+1;
 			   totalPrice+=parseInt(priceChk[i].value);
 		   }//end if
@@ -167,7 +166,6 @@ $("#payBtn").click(function(){
 				}//end if
 			}//end if
 		}//end for
-		alert(tag);
 		hiddenBuy.innerHTML = tag;
 		$("#CartBookFrm").submit();
 		

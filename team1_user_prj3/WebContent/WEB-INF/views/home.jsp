@@ -35,7 +35,7 @@
 	#notice{margin-bottom: 50px; margin-top: 70px}
 	#notice1{font-size: 15px; font-weight: bold; margin-bottom: 10px}
 	#notice2{border:1px solid #333; height:200px;}
-	#notice3_1{margin: 10px auto; margin-left: 10px; font-size: 13px; }
+	#notice3_1{margin: 10px auto; margin-left: 10px; font-size: 14px; }
 	#notice3_2{ text-align: center; vertical-align: middle; margin: 40px auto; font-size: 13px; }
 	#notice3_3{ text-align: center; vertical-align: middle; margin: 40px auto; font-size: 20px; }
 	#notice4{font-size: 13px; text-align: center}
@@ -322,7 +322,7 @@ $(function(){
 <!-- 공지사항, 자주묻는질문, 고객센터 시작  -->
 	<div class="row" id="notice">
 	<!-- 공지사항 시작  -->
-	<div class="col">
+	<div class="col-8">
 	<div id="notice1">
 		<strong>공지사항</strong>
 		<a href="notice.do"><span style="font-size: 10px; color:#333; padding-left: 10px">더보기 ></span></a>
@@ -341,10 +341,10 @@ $(function(){
 	</div>
 	<!-- 공지사항 끝  -->
 	<!-- 자주묻는 질문 시작  -->
-	<div class="col">
+<%-- 	<div class="col">
 		<div id="notice1">
-			<strong>자주 하는 질문</strong>
-			<a href="question.do"><span style="font-size: 10px; color:#333; padding-left: 10px">더보기 ></span></a>
+			<strong>자주 찾는 도움말</strong>
+			<a href="faq.do"><span style="font-size: 10px; color:#333; padding-left: 10px">더보기 ></span></a>
 		</div>
 		<div id="notice2">
 			<div id="notice3_1">
@@ -357,10 +357,10 @@ $(function(){
 		</ul>
 		</div>
 		</div>
-	</div>
+	</div> --%>
 	<!-- 자주묻는 질문 끝  -->
 	<!-- 고객센터 시작  -->
-	<div class="col">
+	<div class="col-4">
 		<div id="notice1">
 			<strong>고객 센터</strong>
 			<a href="faq.do"><span style="font-size: 10px; color:#333; padding-left: 10px">더보기 ></span></a>

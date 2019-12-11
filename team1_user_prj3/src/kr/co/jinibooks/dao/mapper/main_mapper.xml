@@ -69,7 +69,7 @@
 			from(select num, subject
 						from notice
 						order by w_day desc))
-	where r between 1 and 5
+	where r between 1 and 7
   </select>
   
   <!-- 메인 (자주하는 질문 리스트) -->
