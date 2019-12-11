@@ -151,7 +151,7 @@ $(function(){
 	</div>
   <div class="form-group row">
     <div class="col-sm-10">
-      <input type="text" class="form-control"  id="inputEmail" name="inputEmail" placeholder="이메일주소">
+      <input type="text" class="form-control" id="inputEmail" name="inputEmail" placeholder="이메일주소">
     </div>
   </div>
 <!--   <div class="form-group row">

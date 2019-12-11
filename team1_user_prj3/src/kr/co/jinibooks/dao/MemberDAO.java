@@ -11,6 +11,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.springframework.stereotype.Component;
 
 import kr.co.jinibooks.domain.MemberInfoDomain;
+import kr.co.jinibooks.vo.IDandEmailandTempPWVO;
 import kr.co.jinibooks.vo.JoinVO;
 import kr.co.jinibooks.vo.LoginVO;
 
@@ -126,6 +127,24 @@ public class MemberDAO {
 		return name;
 	}//selectIDPW
 	
+	public String selectIDEmail(IDandEmailandTempPWVO idAndEmailAndTempPWVO) throws SQLException {
+		String name = null;
+		
+		try {
+			//4. MyBatis Handler 얻기
+			SqlSession ss = getSessionFactory().openSession();
+			//5. id를 넣어 mapper xml에서 해당 쿼리를 parsing하여 실행하고 결과를 얻습니다.
+			name = ss.selectOne("kr.co.jinibooks.dao.member_mapper.selectIDEmail",idAndEmailAndTempPWVO);
+			
+			ss.close();
+			
+		} catch (IOException ioe) {
+			ioe.printStackTrace();
+		}//end catch
+		
+		return name;
+	}//selectIDEmail
+	
 	public String selectIDWithEmail(String inputEmail) throws SQLException {
 		String outputID = "";
 		
@@ -143,6 +162,24 @@ public class MemberDAO {
 		
 		return outputID;
 	}//selectIDWithEmail
+	
+	public int updateTempPW(IDandEmailandTempPWVO idAndEmailAndTempPWVO) throws SQLException {
+		int cnt = 0;
+		
+		try {
+			//4. MyBatis Handler 얻기
+			SqlSession ss = getSessionFactory().openSession();
+			//5. id를 넣어 mapper xml에서 해당 쿼리를 parsing하여 실행하고 결과를 얻습니다.
+			cnt = ss.update("kr.co.jinibooks.dao.member_mapper.updateTempPW", idAndEmailAndTempPWVO);
+			
+			ss.close();
+			
+		} catch (IOException ioe) {
+			ioe.printStackTrace();
+		}//end catch
+		
+		return cnt;
+	}//updateTempPW
 
 	public MemberInfoDomain selectMemberInfo(String id) throws SQLException {
 		MemberInfoDomain mid = null;

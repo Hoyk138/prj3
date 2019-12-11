@@ -21,7 +21,7 @@
 	#login_Input{padding-left:140px;margin-top: 20px}
 	#login{padding-top: 80px}
 	#pwLabel{font-size: 20px; font-weight: bold; font-family:san-serif; color: #dc3545; padding-left: 100px; padding-bottom: 30px}
-	#inputEmail,#inputId,#pwSearchBtn{width:320px}
+	#inputEmail,#inputID,#pwSearchBtn{width:320px}
 	#btn{padding-top: 20px}
 	#coment{padding-left:115px; font-size: 13px;}
 	
@@ -33,7 +33,99 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script type="text/javascript">
 $(function(){
+	var emailAndEmailChk = false;
 	
+	//이메일 유효성 검사
+	var chkIDAndEmail = function() {
+	    
+		var inputID = $("#inputID").val().trim();
+		var inputEmail = $("#inputEmail").val().trim();
+		//비어있는지 확인
+	    if(inputID == ""){
+	    	alert("아이디를 입력해주세요.");
+	    	emailAndEmailChk = false;
+			return;
+		} else {
+		    if(inputEmail == ""){
+		    	alert("이메일을 입력해주세요.");
+		        emailChk = false;
+				return;
+			} else {
+			    var regExp =  /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+			    if (!regExp.test(inputEmail	)) {
+			    	alert("올바른 이메일 형식이 아닙니다.");
+				    emailChk = false;
+			    } else {
+			    	//유무 확인
+		    		var params = "inputID="+inputID+"&inputEmail="+inputEmail;
+		    		$.ajax({
+		    			url:"id_and_email_chk.do",
+		    			type:"post",
+		    			//async:false,
+		    			data:params,
+		    			dataType:"json",
+		    			error:function(xhr){
+		    				alert("서비스가 원활하지 못해 죄송합니다.1");
+		    				emailChk = false;
+		    				//console.log("에러코드: "+xhr.status);
+		    				//console.log("에러메세지: "+xhr.statusText);
+		    			},
+		    			success:function(json_obj){
+		    				var flag = json_obj.result_flag;
+		    				if(!flag){
+		    					alert("회원정보가 없습니다.");
+		    			        emailChk = false;
+		    				} else {
+		    					//emailExistFlag = true;
+		    					$.ajax({
+					    			url:"pw_search_process.do",
+					    			type:"post",
+					    			async:false,
+					    			data:params,
+					    			dataType:"json",
+					    			error:function(xhr){
+					    				alert("서비스가 원활하지 못해 죄송합니다.2");
+					    				console.log("에러코드: "+xhr.status);
+					    				console.log("에러메세지: "+xhr.statusText);
+			    					},
+			    					success:function(json_obj){
+			    						var outputID = json_obj.outputID;
+			    						//alert(outputID);
+					    				if(outputID == ""){
+					    				    alert("죄송합니다. 비밀번호 확인 도중 문제가 발생하였습니다.");
+						                    emailChk = false;
+					    				} else {
+					    					var form = $('<form></form>');
+					    				    form.attr('action','pw_search_success.do');
+					    				    form.attr('method','post');
+					    				    form.appendTo('body');
+					    				    var hiddenEmail= $("<input type='hidden' value="+inputEmail+" name='inputEmail'/>");
+					    				    form.append(hiddenEmail);
+					    				    form.submit();
+					    				    //출처: https://devgwangpal.tistory.com/55 [흔한 코더의 필기장입니다 :)]
+					    					
+					    			        //location.replace("id_search_success.do");
+						                    emailChk = true;
+					    				}//end if else
+			    					}
+			    				});//ajax
+		    				}//end if else
+		    			}
+		    		});//ajax
+		    		
+		    		//if(emailExistFlag){
+			    	//	
+		    		//}//end if
+			    	
+			    }//end if else
+				
+			}//end if else
+		}//end if else
+	}
+	
+	$("#pwSearchBtn").click(function() {
+        chkIDAndEmail();
+	});//click		
 });
 </script>
 </head>	
@@ -62,17 +154,17 @@ $(function(){
 	</div>
   <div class="form-group row">
     <div class="col-sm-10">
-      <input type="text" class="form-control"  id="inputId" placeholder="아이디">
+      <input type="text" class="form-control" id="inputID" name="inputId" placeholder="아이디">
     </div>
   </div>
   <div class="form-group row">
     <div class="col-sm-10">
-      <input type="text" class="form-control"  id="inputEmail" placeholder="이메일주소">
+      <input type="text" class="form-control" id="inputEmail" name="inputEmail" placeholder="이메일주소">
     </div>
   </div>
   <div class="form-group row">
     <div class="col-sm-10" id="btn">
-      <button type="submit" class="btn btn-danger"  id="pwSearchBtn">찾기</button>
+      <button type="button" class="btn btn-danger" id="pwSearchBtn">찾기</button>
     </div>
   </div>
 </div>

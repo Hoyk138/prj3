@@ -15,6 +15,7 @@
 	<typeAlias type="kr.co.jinibooks.domain.MemberInfoDomain" alias="MemberInfoDomain"/>
 	<typeAlias type="kr.co.jinibooks.vo.JoinVO" alias="JoinVO"/>
 	<typeAlias type="kr.co.jinibooks.vo.LoginVO" alias="LoginVO"/>
+	<typeAlias type="kr.co.jinibooks.vo.IDandEmailandTempPWVO" alias="idAndEmailAndTempPWVO"/>
 </typeAliases>
   <environments default="development">
     <environment id="development">

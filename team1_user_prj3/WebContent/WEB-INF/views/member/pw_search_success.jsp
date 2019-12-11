@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"
     info="비밀번호 재설정 성공"
     %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -63,12 +64,12 @@ $(function(){
 	</div>
   <div class="form-group row">
     <div class="col-sm-10">
-    	<label class="form-check-label" for="gridCheck1" id="pwMessage">book@naver.com 로 <br/>비밀번호 안내 메일을 보내드렸습니다.</label>
+    	<label class="form-check-label" for="gridCheck1" id="pwMessage"><c:out value="${inputEmail}"/> 로 <br/>비밀번호 안내 메일을 보내드렸습니다.</label>
     </div>
   </div>
   <div class="form-group row">
     <div class="col-sm-10" id="btn">
-      <button type="submit" class="btn btn-danger"  id="mainBtn">메인으로</button>
+      <button type="submit" class="btn btn-danger" id="mainBtn">메인으로</button>
     </div>
   </div>
 </div>

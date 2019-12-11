@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
 import kr.co.jinibooks.service.MemberService;
+import kr.co.jinibooks.vo.IDandEmailandTempPWVO;
 import kr.co.jinibooks.vo.JoinVO;
 import kr.co.jinibooks.vo.LoginVO;
 
@@ -57,6 +58,18 @@ public class MemberController {
 		
 		return json.toJSONString();
 	}//idChk
+	
+	@RequestMapping(value="member/id_and_email_chk.do",method=POST)
+	@ResponseBody
+	public String idAndEmailChk(IDandEmailandTempPWVO idAndEmailAndTempPWVO) {
+		System.out.println(idAndEmailAndTempPWVO);
+		
+		//서비스를 사용하여 업무처리 결과를 받는다
+		JSONObject json = memberService.searchIDEMail(idAndEmailAndTempPWVO);
+		//System.out.println(json);
+		
+		return json.toJSONString();
+	}//idAndEmailChk
 	
 	@RequestMapping(value="member/terms_of_use.do",method=GET)
 	public String termsOfUse(Model model) {
@@ -151,8 +164,22 @@ public class MemberController {
 		
 	}//pwSearch
 	
+	@RequestMapping(value="member/pw_search_process.do",method=POST)
+	@ResponseBody
+	public String pwSearchProcess(IDandEmailandTempPWVO idAndEmailAndTempPWVO) {
+		System.out.println(idAndEmailAndTempPWVO);
+		
+		//서비스를 사용하여 업무처리 결과를 받는다
+		JSONObject json = memberService.modifyPW(idAndEmailAndTempPWVO);
+		//System.out.println(json);
+		
+		return json.toJSONString();
+	}//pwSearchProcess
+
 	@RequestMapping(value="member/pw_search_success.do",method=POST)
-	public void pwSearchSuccess() {
+	public void pwSearchSuccess(String inputEmail, Model model) {
+		
+		model.addAttribute("inputEmail", inputEmail);
 		
 	}//pwSearchSuccess
 	
