@@ -38,7 +38,12 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script type="text/javascript">
 $(function(){
-	
+	$("#loginBtn").click(function() {
+		location.replace("login.do");
+	});
+	$("#pwBtn").click(function() {
+		location.replace("pw_search.do");
+	});
 });
 </script>
 </head>	
@@ -82,10 +87,10 @@ $(function(){
   </div>
   <div class="form-group row">
     <div class="col-sm-10" id="btn">
-      <button type="submit" class="btn btn-danger"  id="loginBtn">로그인</button>
+      <button type="button" class="btn btn-danger" id="loginBtn">로그인</button>
     </div>
     <div class="col-sm-10" id="btn">
-      <button type="submit" class="btn btn-secondary"  id="pwBtn">비밀번호를 잃어버리셨나요? 비밀번호 재설정&nbsp;<img src="images/images_join/join_clickBtn.png"></button>
+      <button type="button" class="btn btn-secondary" id="pwBtn">비밀번호를 잃어버리셨나요? 비밀번호 재설정&nbsp;<img src="http://localhost:8080/team1_user_prj3/common/images/images_join/join_clickBtn.png"></button>
     </div>
   </div>
 </div>

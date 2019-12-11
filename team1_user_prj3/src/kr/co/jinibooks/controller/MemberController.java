@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -128,11 +129,12 @@ public class MemberController {
 	}//idSearchProcess
 
 	@RequestMapping(value="member/id_search_success.do",method=POST)
-	public void idSearchSuccess(String outputID, Model model) {
+	public void idSearchSuccess(String outputID, String inputEmail, Model model) {
 		//System.out.println(outputID);
 		
 		//사용자의 이메일에 아이디를 보내 줍니다.
-		
+		memberService.sendIDMail(outputID, inputEmail);
+
 		//아이디를 숨기고 model에 넣어 줍니다.
 		int length = outputID.length();
 		String coveredID = outputID.substring(0, 2);

@@ -94,8 +94,10 @@ $(function(){
 				    				    form.attr('action','id_search_success.do');
 				    				    form.attr('method','post');
 				    				    form.appendTo('body');
-				    				    var hidden= $("<input type='hidden' value="+outputID+" name='outputID'/>");
-				    				    form.append(hidden);
+				    				    var hiddenID= $("<input type='hidden' value="+outputID+" name='outputID'/>");
+				    				    var hiddenEmail= $("<input type='hidden' value="+inputEmail+" name='inputEmail'/>");
+				    				    form.append(hiddenID);
+				    				    form.append(hiddenEmail);
 				    				    form.submit();
 				    				    //출처: https://devgwangpal.tistory.com/55 [흔한 코더의 필기장입니다 :)]
 				    					
