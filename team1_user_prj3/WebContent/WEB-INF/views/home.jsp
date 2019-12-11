@@ -315,7 +315,7 @@ $(function(){
 		</div>
 	</div>
 	</div>
-	</div>                     
+	</div>              
 </div>
 <!-- 책 광고 끝  -->
 	
@@ -325,7 +325,7 @@ $(function(){
 	<div class="col">
 	<div id="notice1">
 		<strong>공지사항</strong>
-		<a href="#"><span style="font-size: 10px; color:#333; padding-left: 10px">더보기 ></span></a>
+		<a href="notice.do"><span style="font-size: 10px; color:#333; padding-left: 10px">더보기 ></span></a>
 	</div>
 	<div id="notice2">
 		<div id="notice3_1">
@@ -349,7 +349,7 @@ $(function(){
 		<div id="notice2">
 			<div id="notice3_1">
 		<ul type="disc">
-		<c:forEach var="question" items="${mainQuestion}">
+		<c:forEach var="question" items="${question}">
 		<li style="margin-bottom: 5px">
 			<a href="#"><span style="color:#333"><c:out value="${question}"></c:out></span></a>
 		</li>
@@ -363,7 +363,7 @@ $(function(){
 	<div class="col">
 		<div id="notice1">
 			<strong>고객 센터</strong>
-			<a href="#"><span style="font-size: 10px; color:#333; padding-left: 10px">더보기 ></span></a>
+			<a href="faq.do"><span style="font-size: 10px; color:#333; padding-left: 10px">더보기 ></span></a>
 		</div>
 		<div id="notice2">
 			<div id="notice3_3"><img src="http://localhost:8080/team1_user_prj3/common/images/images_main/main_clientCenter.png">1588-1588</div>
