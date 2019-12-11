@@ -29,6 +29,7 @@ public class payController {
 		System.out.println(cartData+"controller");
 		//결제창으로 도서를 띄우기
 		 model.addAttribute("payBook", ps.searchPayBook(cartData));
+		 System.out.println("------"+cartData);
 		//넘어온 결제창의 도서들을 총 금액설정
 		 model.addAttribute("total", ps.totalPrice(cartData));
 		 //사용자의 보유 캐시와 보유 포인트 조회

@@ -179,7 +179,8 @@ $(function(){
 		      <span class="badge badge-pill badge-success"> 대여 (7일) </span>
 			</c:if>
 		      
-		      <td id="orderTb"><strong><c:out value="${paybook.title}"/></strong></td>
+		      <td id="orderTb"><strong><c:out value="${paybook.title}"/>
+		      </strong></td>
 		      <td id="orderTb"><strong><c:out value="${paybook.price}"/>원</strong></td>
 		    </tr>
 		      <input type="hidden" value="${paybook.book_code}" name="bookCode"  id="bookCode">

@@ -110,9 +110,35 @@ $(function(){
 	<!-- 책 정보 시작 -->
 	<c:if test="${detailBook.bookCode eq param.book_code}"></c:if>
 	<div class="media" style="margin-top: 40px; padding-left: 50px;">
+	<a href="#" data-toggle="modal" data-target="#exampleModalScrollable">
 	  <img src="http://localhost:8080/team1_user_prj3/common/images/images_book/${detailBook.img}"
 	   class="mr-3" style="width: 210px; margin-top: 15px"
 	   onerror="javascript:this.src='http://localhost:8080/team1_user_prj3/common/images/images_book/noImg.jpg'"/>
+	   </a>
+	 
+<!-- Modal -->
+<div class="modal fade " id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalScrollableTitle"><strong>${detailBook.title}</strong></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       <img src="http://localhost:8080/team1_user_prj3/common/images/images_book/${detailBook.img}"
+	   class="mr-3"
+	   onerror="javascript:this.src='http://localhost:8080/team1_user_prj3/common/images/images_book/noImg.jpg'"/>
+	   
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+	
 	  <div class="media-body" style="margin: 10px; margin-bottom: 10px;">
 	    <h4 class="mt-0"><strong><c:out value="${detailBook.title}"/></strong></h4>
 	    <br/>
