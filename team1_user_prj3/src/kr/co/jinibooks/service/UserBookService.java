@@ -5,6 +5,7 @@ import java.util.List;
 
 import kr.co.jinibooks.dao.UserBookDAO;
 import kr.co.jinibooks.domain.MainNoticeDomain;
+import kr.co.jinibooks.domain.QuestionListDomain;
 import kr.co.jinibooks.domain.cate_best_bookDomain;
 import kr.co.jinibooks.domain.mainBookDomain;
 import kr.co.jinibooks.domain.newBookDomain;
@@ -119,8 +120,8 @@ public class UserBookService {
 	 * 메인- 자주하는 질문 리스트
 	 * @return
 	 */
-	public List<mainBookDomain> searchQuestion(){
-		List<mainBookDomain> mainQuestionList=null;
+	public List<MainNoticeDomain> searchQuestion(){
+		List<MainNoticeDomain> mainQuestionList=null;
 		
 		UserBookDAO ubDao=UserBookDAO.getInstance();
 		try {

@@ -349,9 +349,9 @@ $(function(){
 		<div id="notice2">
 			<div id="notice3_1">
 		<ul type="disc">
-		<c:forEach var="question" items="${question}">
+		<c:forEach var="question" items="${mainQuestion}">
 		<li style="margin-bottom: 5px">
-			<a href="#"><span style="color:#333"><c:out value="${question}"></c:out></span></a>
+			<a href="detail2.do?num=${question.num}"><span style="color:#333"><c:out value="${question.subject}"></c:out></span></a>
 		</li>
 		</c:forEach>
 		</ul>

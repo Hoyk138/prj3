@@ -11,6 +11,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import kr.co.jinibooks.domain.MainNoticeDomain;
+import kr.co.jinibooks.domain.QuestionListDomain;
 import kr.co.jinibooks.domain.SearchBookListDomain;
 import kr.co.jinibooks.domain.SearchCartListDomain;
 import kr.co.jinibooks.domain.SearchNewBookDomain;
@@ -185,8 +186,8 @@ public class UserBookDAO {
 	 * @return
 	 * @throws SQLException
 	 */
-	public List<mainBookDomain> selectQuestion() throws SQLException{
-		List<mainBookDomain> mainQuestionList=null;
+	public List<MainNoticeDomain> selectQuestion() throws SQLException{
+		List<MainNoticeDomain> mainQuestionList=null;
 		
 		try {
 			SqlSession ss=getSessionFactory().openSession();

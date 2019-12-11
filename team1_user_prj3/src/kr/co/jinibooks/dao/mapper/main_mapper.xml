@@ -73,10 +73,10 @@
   </select>
   
   <!-- 메인 (자주하는 질문 리스트) -->
-  <select id="mainQuestionList" resultType="String">
-  	select subject
-	from(select rownum r, subject
-			from(select subject
+  <select id="mainQuestionList" resultType="kr.co.jinibooks.domain.MainNoticeDomain">
+  	select num, subject
+	from(select rownum r, num, subject
+			from(select num, subject
 						from inquiry
 						order by w_day desc))
 	where r between 1 and 5
