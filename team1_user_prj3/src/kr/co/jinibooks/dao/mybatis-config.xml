@@ -32,7 +32,11 @@
     <mapper resource="kr/co/jinibooks/dao/mapper/book_mapper.xml"/>
     <mapper resource="kr/co/jinibooks/dao/mapper/pay_mapper.xml"/>
     <mapper resource="kr/co/jinibooks/dao/mapper/cart_mapper.xml"/>
+    
     <mapper resource="kr/co/jinibooks/dao/mapper/member_mapper.xml"/>
     <mapper resource="kr/co/jinibooks/dao/mapper/mypage_mapper.xml"/>
+    
+    <mapper resource="kr/co/jinibooks/dao/mapper/notice_mapper.xml"/>
+    <mapper resource="kr/co/jinibooks/dao/mapper/question_mapper.xml"/> 
   </mappers>
 </configuration>

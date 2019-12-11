@@ -12,9 +12,9 @@
 	<div class="haside" class="col-4">
 <nav id="navbar-example3" class="navbar navbar-light bg-light" style="border:1px solid #f0f0f0">
     <nav class="nav nav-pills flex-column">
-      <a class="nav-link ml-3 my-1" href="notice_list.jsp"><font color="#333">공지사항</font><br/><hr></a>
-      <a class="nav-link ml-3 my-1" href="notice_questionList.jsp"><font color="#333">문의사항</font><br/><hr></a>
-      <a class="nav-link ml-3 my-1" href="notice_faq.jsp"><font color="#333">고객센터</font><hr></a>
+      <a class="nav-link ml-3 my-1" href="notice.do"><font color="#333">공지사항</font><br/><hr></a>
+      <a class="nav-link ml-3 my-1" href="question.do"><font color="#333">문의사항</font><br/><hr></a>
+      <a class="nav-link ml-3 my-1" href="faq.do"><font color="#333">고객센터</font><hr></a>
       <p  class="nav-link ml-3 my-1">02-2582-3349<br/>(연중무휴)</p>
     </nav>
 </nav>
