@@ -2,6 +2,9 @@
  	pageEncoding="UTF-8"
  	info="책 구매 완료 창"
  	%>
+ <%
+	String id=(String)session.getAttribute("user_id");
+%>   
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,7 +33,7 @@ $(function(){
 		location.href="home.html";
 	});//click
 	$("#myPageBtn").click(function(){
-		location.href="member/mypage/pay_book.do";
+		location.href="/team1_user_prj3/member/mypage/pay_book.do?id=<%=id%>";
 	})
 
 });

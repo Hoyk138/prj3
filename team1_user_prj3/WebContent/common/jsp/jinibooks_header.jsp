@@ -75,7 +75,7 @@ function enterkey() {
 			<a href="/team1_user_prj3/member/join.do" id="join">회원가입</a>
 			<a href="/team1_user_prj3/member/login.do" id="login">로그인</a>
 		<%}else{ %>
-			<a href="/team1_user_prj3/member/mypage/main.do" id="myPage">마이페이지</a>
+			<a href="/team1_user_prj3/member/mypage/pay_book.do?id=<%=id%>" id="myPage">마이페이지</a>
 			<a href="book_cartList.do"  id="cart">책바구니</a>
 			<input type="button" id="logout" style="border: #FFF; background-color: #FFF;" value="로그아웃"/>
 			<!-- <a href="member/logout_process.do" id="logout">로그아웃</a> -->

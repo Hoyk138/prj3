@@ -17,7 +17,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import kr.co.jinibooks.domain.BookDomain;
 import kr.co.jinibooks.domain.MypagePayhistoryDomain;
+import kr.co.jinibooks.domain.SearchMPMyBookPayDomain;
+import kr.co.jinibooks.domain.SearchMPMyBookRentalDomain;
 import kr.co.jinibooks.service.MemberService;
+import kr.co.jinibooks.service.MyPageMyBookService;
 import kr.co.jinibooks.service.MypagePayHistoryService;
 import kr.co.jinibooks.service.MypageService;
 import kr.co.jinibooks.vo.LoginVO;
@@ -58,18 +61,25 @@ public class MypageController {
 		return destination;
 	}//main
 	
+	//////////////////////////////////////////////////////////
 	@RequestMapping(value="member/mypage/pay_book.do",method=GET)
-	public String payBook(HttpSession session, Model model) {
-		String destination = ChkLoginSession(session);
-		if(destination == null) {
-			MypageService ms = new MypageService();
-			List<BookDomain> list = ms.searchPayBookList_All("user1");
-
-			model.addAttribute("payBookList_All", list);
-			destination = "member/mypage/payBook";
-		}//end if
-		return destination;
-	}//payBook
+	public String MyBookList(HttpSession session, Model model, String id) {
+	String destination = ChkLoginSession(session);
+	if(destination == null) {
+	MyPageMyBookService mbs= new MyPageMyBookService();
+	List<SearchMPMyBookRentalDomain> rentalList =mbs.selectRentalBook(id);
+	List<SearchMPMyBookPayDomain> payList =mbs.selectPayBook(id);
+	MypageService ms = new MypageService();
+	List<BookDomain> list = ms.searchPayBookList_All("user1");
+	
+	model.addAttribute("selectRantal", rentalList);
+	model.addAttribute("selectPay", payList);
+	
+	model.addAttribute("payBookList_All", list);
+	destination = "member/mypage/payBook";
+	}//end if
+	return destination;
+	}//MyBookList
 
 	@RequestMapping(value="member/mypage/recommend.do",method=GET)
 	public String recommend(HttpSession session, Model model) {

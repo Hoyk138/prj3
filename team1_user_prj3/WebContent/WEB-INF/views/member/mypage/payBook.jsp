@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"
     info="마이페이지 구매/대여"
     %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +14,7 @@
 
 	/* container 시작 */
 	#MainContainer{ width: 900px; min-height: 1800px; margin:0px auto; text-align: center;}
-	#nav_Content{border-bottom: 1px solid #333; width: 700px;margin-left: 30px; margin-top: 10px}
+	#nav_Content{border-bottom: 1px solid #333; width: 980px;margin-left: 30px; margin-top: 30px; margin-bottom: 30px;}
 	.container1{ max-width: 700px;width: 100%; padding-right: 15px;padding-left: 15px;margin-right: auto;margin-left: auto;}
 	.row1{display: flex;flex-wrap: wrap;}
 	.navbar-brand{font-weight: bold;}
@@ -50,95 +51,75 @@ $(function(){
 <div id="MainContainer" class="col-8">
 <nav class="navbar navbar-light" id="nav_Content">
   <span class="navbar-brand">
-    <img src="http://localhost:8080/team1_user_prj3/common/images/images_mypage/mypage_gume.png" width="50" height="50" class="d-inline-block">
   내 서재
   </span>
 </nav>
 <!-- 검색부트스트립 시작 -->
 
-<nav class="navbar navbar-expand-lg navbar-light" style="border-bottom: 1px solid #333">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">전체 </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">구매</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">대여</a>
-      </li>
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="책 제목 또는 저자명" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">검색</button>
-    </form>
-  </div>
-</nav>
 
 <!-- 검색부트스트립 끝 -->
-<table cellpadding="10px">
-	<tr>
-		<td width="160px;">
-			<img src="http://localhost:8080/team1_user_prj3/common/images/images_book/book_ex2.jpg" width="150px;" height="200px;"/>
-		</td>
-		<td>
-			<img src="http://localhost:8080/team1_user_prj3/common/images/images_book/book_ex2.jpg" width="150px;" height="200px;"/>
-		</td>
-		<td>
-			<img src="http://localhost:8080/team1_user_prj3/common/images/images_book/book_ex2.jpg" width="150px;" height="200px;"/>
-		</td>
-		<td>
-			<img src="http://localhost:8080/team1_user_prj3/common/images/images_book/book_ex2.jpg" width="150px;" height="200px;"/>
-		</td>
-		<td>
-			<img src="http://localhost:8080/team1_user_prj3/common/images/images_book/book_ex2.jpg" width="150px;" height="200px;"/>
-		</td >
-	</tr>
-	<tr style="text-align: center;">
-		<td class="lately_td">
-			도서명<br>저자
-		</td>
-		<td class="lately_td">
-			도서명<br>저자
-		</td>
-		<td class="lately_td">
-			도서명<br>저자
-		</td>
-		<td class="lately_td">
-			도서명<br>저자
-		</td>
-		<td class="lately_td">
-			도서명<br>저자
-		</td>
-	</tr>
-</table>
-<br/><br/>
-<!-- 페이지 시작 -->
-<div style="margin-left:370px;">
-	<nav aria-label="Page navigation example">
-	  <ul class="pagination">
-	    <li class="page-item">
-	      <a class="page-link" href="#" aria-label="Previous">
-	        <span aria-hidden="true">&laquo;</span>
-	      </a>
-	    </li>
-	    <li class="page-item"><a class="page-link" href="#">1</a></li>
-	    <li class="page-item"><a class="page-link" href="#">2</a></li>
-	    <li class="page-item"><a class="page-link" href="#">3</a></li>
-	    <li class="page-item">
-	      <a class="page-link" href="#" aria-label="Next">
-	        <span aria-hidden="true">&raquo;</span>
-	      </a>
-	    </li>
-	  </ul>
-	</nav>
+
+<div>
+<div class="alert alert-success" role="alert" style="margin-top:30px;">
+ 대여 리스트
 </div>
+<c:if test="${empty selectRantal}">
+	대여목록이 없습니다.
+</c:if>
+<div class="row row-cols-1 row-cols-md-4" >
+ <c:forEach var="Rental" items="${selectRantal}">
+  <div class="col mb-3" style="text-align: center">
+	<c:set var ="i" value="${i+1}" />
+    
+    <div class="card-header" style="background-color: white; padding: 0px">
+    <p><span class="badge badge-primary">대여 ${i}</span></p>
+	 </div>
+      <div class="card-body">
+      
+      <img src="http://localhost:8080/team1_user_prj3/common/images/images_book/${Rental.img}" width="150px;" height="200px;"/>
+		
+        <small class="card-text">
+        <br/>
+		    <c:out value="${Rental.title}"/><br/>
+			<c:out value="${Rental.author}"/><br/>
+			<c:out value="${Rental.rental_start}"/>~<c:out value="${Rental.rental_end}"/><br/>
+      </small>
+      </div>
+
+  </div>
+ 	</c:forEach>
+</div><!--row row-cols-1 row-cols-md-3  -->
+</div>
+<div class="alert alert-success" role="alert" style="margin-top:30px; ">
+	구매리스트
+</div>
+<c:if test="${empty selectPay}">
+	구매목록이 없습니다.
+</c:if>
+<div class="row row-cols-1 row-cols-md-4" >
+ <c:forEach var="Pay" items="${selectPay}">
+  <div class="col mb-3" style="text-align: center;">
+	<c:set var ="j" value="${j+1}" />
+    <div class="card-header" style="background-color: white; padding: 0px">
+    <p><span class="badge badge-primary">구매 ${j}</span></p>
+	 </div>
+      <div class="card-body">
+      <img src="http://localhost:8080/team1_user_prj3/common/images/images_book/${Pay.img}" width="150px;" height="200px;"/>
+		
+        <small class="card-text">
+        <br/>
+		    <c:out value="${Pay.title}"/><br/>
+			<c:out value="${Pay.author}"/><br/>
+      </small>
+      </div>
+
+  </div>
+ 	</c:forEach>
+</div><!--row row-cols-1 row-cols-md-3  -->
+</div>
+</div>
+
 <!-- 페이지 끝 -->
-</div>
 <!-- container 끝  -->			
 </div>
 <!-- footer 시작  -->	
