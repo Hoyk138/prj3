@@ -93,6 +93,17 @@ public class MemberController {
 		
 		return json.toJSONString();
 	}//joinProcess
+	
+	@RequestMapping(value="member/modify_process.do",method=POST)
+	@ResponseBody
+	public String modifyProcess(JoinVO jVO,  Model model) {
+		
+		System.out.println(jVO);
+		
+		JSONObject json = memberService.addJoin(jVO);
+		
+		return json.toJSONString();
+	}//modifyProcess
 
 	@RequestMapping(value="member/join_success.do",method=GET)
 	public void joinSuccess() {
