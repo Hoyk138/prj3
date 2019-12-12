@@ -36,6 +36,7 @@
     
     <mapper resource="kr/co/jinibooks/dao/mapper/member_mapper.xml"/>
     <mapper resource="kr/co/jinibooks/dao/mapper/mypage_mapper.xml"/>
+    <mapper resource="kr/co/jinibooks/dao/mapper/mypagePayhistory_mapper.xml"/>
     
     <mapper resource="kr/co/jinibooks/dao/mapper/notice_mapper.xml"/>
     <mapper resource="kr/co/jinibooks/dao/mapper/question_mapper.xml"/> 
