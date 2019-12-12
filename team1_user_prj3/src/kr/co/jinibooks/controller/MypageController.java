@@ -16,9 +16,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import kr.co.jinibooks.domain.BookDomain;
+import kr.co.jinibooks.domain.MypagePayhistoryDomain;
 import kr.co.jinibooks.service.MemberService;
+import kr.co.jinibooks.service.MypagePayHistoryService;
 import kr.co.jinibooks.service.MypageService;
 import kr.co.jinibooks.vo.LoginVO;
+import kr.co.jinibooks.vo.pageVO;
 
 @Controller
 @Component
@@ -79,9 +82,31 @@ public class MypageController {
 	}//recommend
 
 	@RequestMapping(value="member/mypage/pay_history.do",method=GET)
-	public String payHistory(HttpSession session, Model model) {
+	public String payHistory(String id, pageVO pvo, @RequestParam(required = false, defaultValue = "1")String current_page, 
+			HttpSession session, Model model) {
+		
+		//pvo.setCurrentPage(Integer.parseInt(current_page));
+		
 		String destination = ChkLoginSession(session);
 		if(destination == null) {
+			MypagePayHistoryService pphs=new MypagePayHistoryService();
+			
+			//int totalCount=pphs.totalCount(id);
+			//int pageScale = pphs.pageScale();
+			//int totalPage = pphs.totalPage(pageScale, totalCount);
+			//int startNum = pphs.startNum(pageScale, pvo.getCurrentPage());
+			//int endNum = pphs.endNum(pageScale, startNum);
+			
+			//pvo.setStartNum(startNum);
+			//pvo.setEndNum(endNum);
+			
+			List<MypagePayhistoryDomain> list = pphs.searchpayHistory("user1");
+			
+			//PayhistoryIndexListVO pilVO=new PayhistoryIndexListVO(pvo.getCurrentPage(),totalPage,"member/mypage/pay_history.do");
+			//String indexList=pphs.indexList(pilVO, pvo);
+			
+			model.addAttribute("payhistoryData", list);
+			//model.addAttribute("indexList", indexList); //인덱스 리스트
 		
 			destination = "member/mypage/payHistory";
 		}//end if
