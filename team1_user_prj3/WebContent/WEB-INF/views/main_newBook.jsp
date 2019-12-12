@@ -13,7 +13,7 @@
 <head>
 <meta charset="UTF-8">
 <title>이달의 신간 페이지</title>
-<link rel="stylesheet" type="text/css" href="http://localhost:8080/team1_user_prj3/common/css/main.css"/>
+<link rel="stylesheet" type="text/css" href="http://211.63.89.133/team1_user_prj3/common/css/main.css"/>
 <style type="text/css">
 	
 	/* aside시작 */
@@ -63,7 +63,7 @@ $(function(){
 		    <div class="col-md-4" id="bookImg" >
 		    	<div style="width:250px; padding-left: 30px">
 		  	<a href="book_detail.do?code=${newData.book_code}&cateCode=${newData.code}">
-		      	<img src="http://localhost:8080/team1_user_prj3/common/images/images_book/${newData.img}" class="card-img"  height="300px" onerror="javascript:this.src='http://localhost:8080/team1_user_prj3/common/images/images_book/noImg.jpg'">
+		      	<img src="http://211.63.89.133/team1_user_prj3/common/images/images_book/${newData.img}" class="card-img"  height="300px" onerror="javascript:this.src='http://211.63.89.133/team1_user_prj3/common/images/images_book/noImg.jpg'">
 		    	</a>
 		    	</div>
 		    </div>

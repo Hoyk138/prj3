@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>회원가입</title>
-<link rel="stylesheet" type="text/css" href="http://localhost:8080/team1_user_prj3/common/css/main.css"/>
+<link rel="stylesheet" type="text/css" href="http://211.63.89.133/team1_user_prj3/common/css/main.css"/>
 <style type="text/css">
 	#joinFormWrap{margin:0px auto; }
 	/* 헤더 시작 */
@@ -478,7 +478,7 @@ $(function(){
 <!-- header 시작  -->		
 <div id="header" style="height: 45px;">
 	<div id="hLogo_userJoin" style="height: 45px;">
-   		<img src="http://localhost:8080/team1_user_prj3/common/images/header_logo.PNG" class="d-inline-block align-top" alt=""><span id="logo">JINI BOOKS</span>
+   		<img src="http://211.63.89.133/team1_user_prj3/common/images/header_logo.PNG" class="d-inline-block align-top" alt=""><span id="logo">JINI BOOKS</span>
 	</div>
 </div>
 <!-- header 끝  -->

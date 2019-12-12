@@ -8,8 +8,8 @@
 <head>
 <meta charset="UTF-8">
 <title>마이페이지 홈</title>
-<link rel="stylesheet" type="text/css" href="http://localhost:8080/team1_user_prj3/common/css/main.css">
-<link rel="stylesheet" type="text/css" href="http://localhost:8080/team1_user_prj3/common/css/mypageMenu.css">
+<link rel="stylesheet" type="text/css" href="http://211.63.89.133/team1_user_prj3/common/css/main.css">
+<link rel="stylesheet" type="text/css" href="http://211.63.89.133/team1_user_prj3/common/css/mypageMenu.css">
 <style type="text/css">
 	
 	/* container 시작 */
@@ -52,7 +52,7 @@ $(function(){
 <!-- 마이페이지 헤더 -->
 <nav class="navbar navbar-light" id="nav_Content">
   <span class="navbar-brand">
-    <img src="http://localhost:8080/team1_user_prj3/common/images/images_mypage/mypage_gume.png" width="50" height="50" class="d-inline-block">
+    <img src="http://211.63.89.133/team1_user_prj3/common/images/images_mypage/mypage_gume.png" width="50" height="50" class="d-inline-block">
 마이페이지
   </span>
 </nav>
@@ -62,7 +62,7 @@ $(function(){
 
 <nav class="navbar navbar-light" id="nav_Content">
   <span class="navbar-brand">
-    <img src="http://localhost:8080/team1_user_prj3/common/images/images_mypage/mypage_gume.png" width="50" height="50" class="d-inline-block">
+    <img src="http://211.63.89.133/team1_user_prj3/common/images/images_mypage/mypage_gume.png" width="50" height="50" class="d-inline-block">
 구매/대여목록
   </span>
 </nav>
@@ -71,7 +71,7 @@ $(function(){
 	<tr>
 	  <c:forEach var="payBook" items="${payBookList_5}">
 		<td width="160px;">
-			<img src="http://localhost:8080/team1_user_prj3/common/images/book/${payBook.category}/${payBook.img}" width="150px;" height="200px;"/>
+			<img src="http://211.63.89.133/team1_user_prj3/common/images/book/${payBook.category}/${payBook.img}" width="150px;" height="200px;"/>
 		</td>
 	  </c:forEach>
 	</tr>
@@ -93,7 +93,7 @@ $(function(){
 
 <nav class="navbar navbar-light" id="nav_Content">
   <span class="navbar-brand">
-    <img src="http://localhost:8080/team1_user_prj3/common/images/images_mypage/mypage_gume.png" width="50" height="50" class="d-inline-block">
+    <img src="http://211.63.89.133/team1_user_prj3/common/images/images_mypage/mypage_gume.png" width="50" height="50" class="d-inline-block">
 추천도서목록
   </span>
 </nav>
@@ -101,19 +101,19 @@ $(function(){
 <table cellpadding="10px">
 	<tr>
 		<td width="160px;">
-			<img src="http://localhost:8080/team1_user_prj3/common/images/images_book/book_ex2.jpg" width="150px;" height="200px;"/>
+			<img src="http://211.63.89.133/team1_user_prj3/common/images/images_book/book_ex2.jpg" width="150px;" height="200px;"/>
 		</td>
 		<td>
-			<img src="http://localhost:8080/team1_user_prj3/common/images/images_book/book_ex2.jpg" width="150px;" height="200px;"/>
+			<img src="http://211.63.89.133/team1_user_prj3/common/images/images_book/book_ex2.jpg" width="150px;" height="200px;"/>
 		</td>
 		<td>
-			<img src="http://localhost:8080/team1_user_prj3/common/images/images_book/book_ex2.jpg" width="150px;" height="200px;"/>
+			<img src="http://211.63.89.133/team1_user_prj3/common/images/images_book/book_ex2.jpg" width="150px;" height="200px;"/>
 		</td>
 		<td>
-			<img src="http://localhost:8080/team1_user_prj3/common/images/images_book/book_ex2.jpg" width="150px;" height="200px;"/>
+			<img src="http://211.63.89.133/team1_user_prj3/common/images/images_book/book_ex2.jpg" width="150px;" height="200px;"/>
 		</td>
 		<td>
-			<img src="http://localhost:8080/team1_user_prj3/common/images/images_book/book_ex2.jpg" width="150px;" height="200px;"/>
+			<img src="http://211.63.89.133/team1_user_prj3/common/images/images_book/book_ex2.jpg" width="150px;" height="200px;"/>
 		</td >
 	</tr>
 	<tr style="text-align: center;">

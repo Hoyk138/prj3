@@ -9,7 +9,7 @@
 <head>
 <meta charset="UTF-8">
 <title>도서 상세페이지</title>
-<link rel="stylesheet" type="text/css" href="http://localhost:8080/team1_user_prj3/common/css/main.css">
+<link rel="stylesheet" type="text/css" href="http://211.63.89.133/team1_user_prj3/common/css/main.css">
 <style type="text/css">
 
 	/* container 시작 */
@@ -111,9 +111,9 @@ $(function(){
 	<c:if test="${detailBook.bookCode eq param.book_code}"></c:if>
 	<div class="media" style="margin-top: 40px; padding-left: 50px;">
 	<a href="#" data-toggle="modal" data-target="#exampleModalScrollable">
-	  <img src="http://localhost:8080/team1_user_prj3/common/images/images_book/${detailBook.img}"
+	  <img src="http://211.63.89.133/team1_user_prj3/common/images/images_book/${detailBook.img}"
 	   class="mr-3" style="width: 210px; margin-top: 15px"
-	   onerror="javascript:this.src='http://localhost:8080/team1_user_prj3/common/images/images_book/noImg.jpg'"/>
+	   onerror="javascript:this.src='http://211.63.89.133/team1_user_prj3/common/images/images_book/noImg.jpg'"/>
 	   </a>
 	 
 <!-- Modal -->
@@ -127,9 +127,9 @@ $(function(){
         </button>
       </div>
       <div class="modal-body">
-       <img src="http://localhost:8080/team1_user_prj3/common/images/images_book/${detailBook.img}"
+       <img src="http://211.63.89.133/team1_user_prj3/common/images/images_book/${detailBook.img}"
 	   class="mr-3"
-	   onerror="javascript:this.src='http://localhost:8080/team1_user_prj3/common/images/images_book/noImg.jpg'"/>
+	   onerror="javascript:this.src='http://211.63.89.133/team1_user_prj3/common/images/images_book/noImg.jpg'"/>
 	   
       </div>
       <div class="modal-footer">
@@ -334,8 +334,8 @@ $(function(){
 	    <c:forEach var="random" items="${randomList1}">
 	    <td style="text-align: center">
 		     <a href="book_detail.do?code=${random.book_code}&cateCode=${detailBook.code}"> 
-			    <img src="http://localhost:8080/team1_user_prj3/common/images/images_book/${random.img}"
-			    class="book_similar_Img" onerror="javascript:this.src='http://localhost:8080/team1_user_prj3/common/images/images_book/noImg.jpg'">
+			    <img src="http://211.63.89.133/team1_user_prj3/common/images/images_book/${random.img}"
+			    class="book_similar_Img" onerror="javascript:this.src='http://211.63.89.133/team1_user_prj3/common/images/images_book/noImg.jpg'">
 			 </a><br/>
 			 
 			 <c:out value="${random.title}"/>
@@ -350,8 +350,8 @@ $(function(){
 	    <c:forEach var="random" items="${randomList2}">
 	    <td>
 		     <a href="book_detail.do?code=${random.book_code}&cateCode=${detailBook.code}"> 
-			    <img src="http://localhost:8080/team1_user_prj3/common/images/images_book/${random.img}"
-			    class="book_similar_Img" onerror="javascript:this.src='http://localhost:8080/team1_user_prj3/common/images/images_book/noImg.jpg'">
+			    <img src="http://211.63.89.133/team1_user_prj3/common/images/images_book/${random.img}"
+			    class="book_similar_Img" onerror="javascript:this.src='http://211.63.89.133/team1_user_prj3/common/images/images_book/noImg.jpg'">
 			 </a><br/>
 			 <c:out value="${random.title}"/>
 	    </td>

@@ -8,8 +8,8 @@
 <head>
 <meta charset="UTF-8">
 <title>마이페이지 회원정보수정</title>
-<link rel="stylesheet" type="text/css" href="http://localhost:8080/team1_user_prj3/common/css/main.css">
-<link rel="stylesheet" type="text/css" href="http://localhost:8080/team1_user_prj3/common/css/mypageMenu.css">
+<link rel="stylesheet" type="text/css" href="http://211.63.89.133/team1_user_prj3/common/css/main.css">
+<link rel="stylesheet" type="text/css" href="http://211.63.89.133/team1_user_prj3/common/css/mypageMenu.css">
 <style type="text/css">
 
 	/* container 시작 */
@@ -339,7 +339,7 @@ $(function(){
 
 <nav class="navbar navbar-light" id="nav_Content">
   <span class="navbar-brand">
-    <img src="http://localhost:8080/team1_user_prj3/common/images/images_mypage/mypage_person_icon.png" width="50" height="50" class="d-inline-block">
+    <img src="http://211.63.89.133/team1_user_prj3/common/images/images_mypage/mypage_person_icon.png" width="50" height="50" class="d-inline-block">
    회원정보 수정
   </span>
 </nav>

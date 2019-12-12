@@ -74,7 +74,7 @@ $("#cashBtn").click(function(){
 		  <input type="hidden" name="current_page" id="currentPage" value="1"/>
 		<nav>
 	  		<a class="navbar-brand" href="/team1_user_prj3/home.do">
-	    		<img src="http://localhost:8080/team1_user_prj3/common/images/header_logo.PNG"  class="d-inline-block align-top" alt=""><span id="logo">JINI BOOKS</span>
+	    		<img src="http://211.63.89.133/team1_user_prj3/common/images/header_logo.PNG"  class="d-inline-block align-top" alt=""><span id="logo">JINI BOOKS</span>
 			</a>
 		</nav>
 		<div id="hContent">

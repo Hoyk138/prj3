@@ -15,7 +15,7 @@
 <head>
 <meta charset="UTF-8">
 <title>결제 페이지</title>
-<link rel="stylesheet" type="text/css" href="http://localhost:8080/team1_user_prj3/common/css/main.css"/>
+<link rel="stylesheet" type="text/css" href="http://211.63.89.133/team1_user_prj3/common/css/main.css"/>
 <style type="text/css">
 	
 	/* aside시작 */
@@ -169,7 +169,7 @@ $(function(){
 		  <tbody>
 		  <c:forEach var="paybook" items="${payBook}">
 		    <tr>
-		      <th scope="row"><img src="http://localhost:8080/team1_user_prj3/common/images/images_book/${paybook.img}" width="100" hieght="300"></th>
+		      <th scope="row"><img src="http://211.63.89.133/team1_user_prj3/common/images/images_book/${paybook.img}" width="100" hieght="300"></th>
 		      <td id="orderTb">
 			<c:if test="${paybook.buy eq 'p' }">
 		      <span class="badge badge-pill badge-success"> 구매 </span>

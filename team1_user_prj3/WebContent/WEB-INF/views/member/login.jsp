@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>로그인</title>
-<link rel="stylesheet" type="text/css" href="http://localhost:8080/team1_user_prj3/common/css/main.css"/>
+<link rel="stylesheet" type="text/css" href="http://211.63.89.133/team1_user_prj3/common/css/main.css"/>
 <style type="text/css">
 	#class4Wrap{margin:0px auto; }
 	/* 헤더 시작 */
@@ -126,7 +126,7 @@ $(function(){
 	<div id="hLogo">
 	<nav>
  		<a class="navbar-brand" href="/team1_user_prj3/home.do">
-   		<img src="http://localhost:8080/team1_user_prj3/common/images/header_logo.PNG" class="d-inline-block align-top" alt=""/><span id="logo">JINI BOOKS</span>
+   		<img src="http://211.63.89.133/team1_user_prj3/common/images/header_logo.PNG" class="d-inline-block align-top" alt=""/><span id="logo">JINI BOOKS</span>
 		</a>
 	</nav>
 	</div>
@@ -139,13 +139,13 @@ $(function(){
 <form class="loginFrm">
 <div id="login_Input">
   <div class="form-group row">
-  <span style="width:20px; height:20px"><img src="http://localhost:8080/team1_user_prj3/common/images/images_join/join_userid.png"></span>
+  <span style="width:20px; height:20px"><img src="http://211.63.89.133/team1_user_prj3/common/images/images_join/join_userid.png"></span>
     <div class="col-sm-10">
       <input type="text" class="form-control" id="inputID" name="inputID" placeholder="아이디">
     </div>
   </div>
   <div class="form-group row">
-  	<span style="width:20px; height:20px"><img src="http://localhost:8080/team1_user_prj3/common/images/images_join/join_password.png"></span>
+  	<span style="width:20px; height:20px"><img src="http://211.63.89.133/team1_user_prj3/common/images/images_join/join_password.png"></span>
     <div class="col-sm-10">
       <input type="password" class="form-control" id="inputPW" placeholder="비밀번호">
     </div>

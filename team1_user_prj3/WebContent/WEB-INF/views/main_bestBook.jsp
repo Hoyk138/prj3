@@ -11,7 +11,7 @@
 <head>
 <meta charset="UTF-8">
 <title>도서 베스트</title>
-<link rel="stylesheet" type="text/css" href="http://localhost:8080/team1_user_prj3/common/css/main.css">
+<link rel="stylesheet" type="text/css" href="http://211.63.89.133/team1_user_prj3/common/css/main.css">
 <style type="text/css">
 
 	/* container 시작 */
@@ -88,7 +88,7 @@ $(function(){
         <p><span class="badge badge-dark">${i}</span></p>
     <div class="card" style="width:220px; min-height:420px">
   <a href="book_detail.do?code=${bestWeekData.book_code}&cateCode=${bestWeekData.code}">
-      <img src="http://localhost:8080/team1_user_prj3/common/images/images_book/${bestWeekData.img}" class="card-img-top"  width="200px" height="250px" onerror="javascript:this.src='http://localhost:8080/team1_user_prj3/common/images/images_book/noImg.jpg'">
+      <img src="http://211.63.89.133/team1_user_prj3/common/images/images_book/${bestWeekData.img}" class="card-img-top"  width="200px" height="250px" onerror="javascript:this.src='http://211.63.89.133/team1_user_prj3/common/images/images_book/noImg.jpg'">
   </a>
       <div class="card-body">
         <p class="card-title"><c:out value="${bestWeekData.title }"/></p>
@@ -132,7 +132,7 @@ $(function(){
         <p><span class="badge badge-dark">${j}</span></p>
     <div class="card" style="width:220px; min-height:420px">
   <a href="book_detail.do?code=${bestMonthData.book_code }&cateCode=${bestMonthData.code}">
-      <img src="http://localhost:8080/team1_user_prj3/common/images/images_book/${bestMonthData.img}" class="card-img-top" alt="..." width="200px" height="250px" onerror="javascript:this.src='http://localhost:8080/team1_user_prj3/common/images/images_book/noImg.jpg'">
+      <img src="http://211.63.89.133/team1_user_prj3/common/images/images_book/${bestMonthData.img}" class="card-img-top" alt="..." width="200px" height="250px" onerror="javascript:this.src='http://211.63.89.133/team1_user_prj3/common/images/images_book/noImg.jpg'">
   </a>
       <div class="card-body">
         <p class="card-title"><c:out value="${bestMonthData.title }"/></p>

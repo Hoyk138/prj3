@@ -5,7 +5,7 @@
   <div class="row">
 	<div id="fLogo" class="col" >
 		<nav>
-			 <img src="http://localhost:8080/team1_user_prj3/common/images/footer_logo_icon.png"  class="d-inline-block align-top" />
+			 <img src="http://211.63.89.133/team1_user_prj3/common/images/footer_logo_icon.png"  class="d-inline-block align-top" />
 			 <span id="fBookLogo"><font color="#EE4137" >JINI BOOKS</font></span>
 		</nav>
 	</div>

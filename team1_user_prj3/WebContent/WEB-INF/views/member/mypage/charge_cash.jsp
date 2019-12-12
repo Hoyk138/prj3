@@ -7,8 +7,8 @@
 <head>
 <meta charset="UTF-8">
 <title>캐시충전</title>
-<link rel="stylesheet" type="text/css" href="http://localhost:8080/team1_user_prj3/common/css/main.css">
-<link rel="stylesheet" type="text/css" href="http://localhost:8080/team1_user_prj3/common/css/mypageMenu.css">
+<link rel="stylesheet" type="text/css" href="http://211.63.89.133/team1_user_prj3/common/css/main.css">
+<link rel="stylesheet" type="text/css" href="http://211.63.89.133/team1_user_prj3/common/css/mypageMenu.css">
 <style type="text/css">
 	
 	/* container 시작 */
@@ -69,7 +69,7 @@ $(function(){
 <form class="cashFrm">
 <div id="cashInput">
   <div class="form-group row"  id="jiniCash">
-  	<img src="http://localhost:8080/team1_user_prj3/common/images/images_mypage/my_cash.png">
+  	<img src="http://211.63.89.133/team1_user_prj3/common/images/images_mypage/my_cash.png">
 	<label class="form-check-label" for="gridCheck1" id="cashLabel">지니 캐시</label>
   </div>
 	<hr/>

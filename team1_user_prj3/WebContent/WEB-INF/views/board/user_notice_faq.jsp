@@ -7,8 +7,8 @@
 <head>
 <meta charset="UTF-8">
 <title>고객센터 (자주찾는질문)</title>
-<link rel="stylesheet" type="text/css" href="http://localhost:8080/team1_user_prj3/common/css/main.css"/>
-<link rel="stylesheet" type="text/css" href="http://localhost:8080/team1_user_prj3/common/css/noticeMenu.css"/>
+<link rel="stylesheet" type="text/css" href="http://211.63.89.133/team1_user_prj3/common/css/main.css"/>
+<link rel="stylesheet" type="text/css" href="http://211.63.89.133/team1_user_prj3/common/css/noticeMenu.css"/>
 <style type="text/css">
 	 
 	#container{margin-top: 80px}
