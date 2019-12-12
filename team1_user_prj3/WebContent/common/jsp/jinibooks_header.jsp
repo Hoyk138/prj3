@@ -50,7 +50,17 @@ function enterkey() {
 	
 	}//end if
 }//enterkey
-	
+
+$(function(){
+$("#cashBtn").click(function(){
+	if("${user_id}"!=null){
+		location.href="member/mypage/charge_cash.do";
+	}else{
+		alert("로그인 후, 이용해주세요.");
+		location.href="member/login.do";
+	}//end if
+})//click
+})//ready	
 	
 
 /////////////12/10 수정///////////////////////
@@ -76,7 +86,7 @@ function enterkey() {
 			<a href="/team1_user_prj3/member/login.do" id="login">로그인</a>
 		<%}else{ %>
 			<a href="/team1_user_prj3/member/mypage/pay_book.do?id=<%=id%>" id="myPage">마이페이지</a>
-			<a href="book_cartList.do"  id="cart">책바구니</a>
+			<a href="book_cartList.do?id=<%=id%>"  id="cart">책바구니</a>
 			<input type="button" id="logout" style="border: #FFF; background-color: #FFF;" value="로그아웃"/>
 			<!-- <a href="member/logout_process.do" id="logout">로그아웃</a> -->
 			<!-- <a href="javascript:location.replace('member/logout_process.do')" id="logout">로그아웃</a> -->
@@ -137,6 +147,7 @@ function enterkey() {
 	
 	<!--캐시충전 시작  -->
 		<div class="col" >
+		
 		 <button type="button" class="btn btn-warning" id="cashBtn"><span id="cashName">캐시충전</span></button>
 		</div>
 	<!--캐시충전 끝  -->

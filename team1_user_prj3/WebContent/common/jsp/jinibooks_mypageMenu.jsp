@@ -21,7 +21,7 @@
     </nav>
     <a class="nav-link"><img src="http://localhost:8080/team1_user_prj3/common/images/images_mypage/my_user.png">&nbsp;개인</a>
     <nav class="nav nav-pills flex-column">
-      <a class="nav-link ml-3 my-1" href="#">1:1 문의</a>
+      <a class="nav-link ml-3 my-1" href="/team1_user_prj3/question.do">1:1 문의</a>
 <!--       <form action="info.do" method="post">
         <input type="submit" class="nav-link ml-3 my-1" style="border: #FFF; color: #007bff; text-decoration: none; background-color: transparent;" value="정보 변경"/>
       </form> -->
