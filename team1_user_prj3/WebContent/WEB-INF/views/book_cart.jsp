@@ -133,7 +133,6 @@ function chkPrice(){
 	  for(i=0; i < codeChk.length; i++){
 		   if(codeChk[i].checked){//선택되었다면
 			
-			   alert(document.CartBookFrm.code[i].value);
 			   chkCnt=chkCnt+1;
 			   totalPrice+=parseInt(priceChk[i].value);
 		   }//end if
@@ -167,7 +166,6 @@ $("#payBtn").click(function(){
 				}//end if
 			}//end if
 		}//end for
-		alert(tag);
 		hiddenBuy.innerHTML = tag;
 		$("#CartBookFrm").submit();
 		
@@ -203,7 +201,7 @@ $("#payBtn").click(function(){
 
 <form name="CartBookFrm" id="CartBookFrm" action="book_pay.do" method="post">
 <input type="hidden" name="id" value="${user_id}">
-<iput type="hidden" name="cartValue" value="value"/>
+<input type="hidden" name="cartValue" value="value"/>
 <div class="row"  style="border-bottom: 1px solid #f0f0f0; width: 1460px; margin:30px;">
 		<div style="width: 100px; position:relative; float:right; margin-bottom: 15px;">
 			<input type="button"  class="btn btn-outline-danger" value="선택삭제" id="deleteBtn" onclick="bookDel()"/>

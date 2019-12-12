@@ -30,7 +30,7 @@ $(function(){
 		location.href="home.html";
 	});//click
 	$("#myPageBtn").click(function(){
-		location.href="#";
+		location.href="member/mypage/pay_book.do";
 	})
 
 });
