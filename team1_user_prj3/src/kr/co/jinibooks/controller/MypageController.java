@@ -100,7 +100,7 @@ public class MypageController {
 			//pvo.setStartNum(startNum);
 			//pvo.setEndNum(endNum);
 			
-			List<MypagePayhistoryDomain> list = pphs.searchpayHistory("user1");
+			List<MypagePayhistoryDomain> list = pphs.searchpayHistory(id);
 			
 			//PayhistoryIndexListVO pilVO=new PayhistoryIndexListVO(pvo.getCurrentPage(),totalPage,"member/mypage/pay_history.do");
 			//String indexList=pphs.indexList(pilVO, pvo);
