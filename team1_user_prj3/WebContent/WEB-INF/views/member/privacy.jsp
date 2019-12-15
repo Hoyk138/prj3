@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>개인정보 처리방침</title>
-<link rel="stylesheet" type="text/css" href="http://211.63.89.133/servlet_prj/common/css/main.css"/>
+<link rel="stylesheet" type="text/css" href="http://localhost:8080/servlet_prj/common/css/main.css"/>
 <style type="text/css">
 	#books{ height: 1100px; margin:0px auto; }
 	/* 헤더 시작 */

@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>아이디 찾기</title>
-<link rel="stylesheet" type="text/css" href="http://211.63.89.133/team1_user_prj3/common/css/main.css"/>
+<link rel="stylesheet" type="text/css" href="http://localhost:8080/team1_user_prj3/common/css/main.css"/>
 <style type="text/css">
 	#class4Wrap{height: 750px; margin:0px auto; }
 	/* 헤더 시작 */
@@ -134,7 +134,7 @@ $(function(){
 	<div id="hLogo">
 	<nav>
  		<a class="navbar-brand" href="#">
-   		<img src="http://211.63.89.133/team1_user_prj3/common/images/header_logo.PNG" class="d-inline-block align-top" alt=""><span id="logo">JINI BOOKS</span>
+   		<img src="http://localhost:8080/team1_user_prj3/common/images/header_logo.PNG" class="d-inline-block align-top" alt=""><span id="logo">JINI BOOKS</span>
 		</a>
 	</nav>
 	</div>
@@ -169,7 +169,7 @@ $(function(){
 <div style="padding-top: 10px">
   <hr color="#F58E69" width="400px"/>
   <span id="coment">이메일이 기억나지 않는다면 고객센터로 문의해주세요!</span><br/>
-  <span id="coment2"><img src="http://211.63.89.133/team1_user_prj3/common/images/images_join/join_phone.png">&nbsp;1588-1588</span>
+  <span id="coment2"><img src="http://localhost:8080/team1_user_prj3/common/images/images_join/join_phone.png">&nbsp;1588-1588</span>
   
   </div>
 </form>

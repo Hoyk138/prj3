@@ -8,7 +8,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="http://211.63.89.133/servlet_prj/common/css/main.css"/>
+<link rel="stylesheet" type="text/css" href="http://localhost:8080/servlet_prj/common/css/main.css"/>
 <style type="text/css">
 	#class4Wrap{height: 750px; margin:0px auto; }
 	/* 헤더 시작 */
@@ -49,7 +49,7 @@ $(function(){
 	<div id="hLogo">
 	<nav>
  		<a class="navbar-brand" href="#">
-   		<img src="http://211.63.89.133/Team1_prj3/user_book/images/header_logo.PNG"  class="d-inline-block align-top" alt=""><span id="logo">JINI BOOKS</span>
+   		<img src="http://localhost:8080/Team1_prj3/user_book/images/header_logo.PNG"  class="d-inline-block align-top" alt=""><span id="logo">JINI BOOKS</span>
 		</a>
 	</nav>
 	</div>

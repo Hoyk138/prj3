@@ -11,8 +11,8 @@
 <head>
 <meta charset="UTF-8">
 <title>마이페이지 결제내역</title>
-<link rel="stylesheet" type="text/css" href="http://211.63.89.133/team1_user_prj3/common/css/main.css">
-<link rel="stylesheet" type="text/css" href="http://211.63.89.133/team1_user_prj3/common/css/mypageMenu.css">
+<link rel="stylesheet" type="text/css" href="http://localhost:8080/team1_user_prj3/common/css/main.css">
+<link rel="stylesheet" type="text/css" href="http://localhost:8080/team1_user_prj3/common/css/mypageMenu.css">
 <style type="text/css">
 
 	/* container 시작 */
@@ -60,7 +60,7 @@ $(function(){
 <div id="MainContainer" class="col-8">
 <nav class="navbar navbar-light" id="nav_Content">
   <span class="navbar-brand">
-    <img src="http://211.63.89.133/team1_user_prj3/common/images/images_mypage/mypage_calc_icon.png" width="50" height="50" class="d-inline-block">
+    <img src="http://localhost:8080/team1_user_prj3/common/images/images_mypage/mypage_calc_icon.png" width="50" height="50" class="d-inline-block">
    결제내역
   </span>
 </nav>

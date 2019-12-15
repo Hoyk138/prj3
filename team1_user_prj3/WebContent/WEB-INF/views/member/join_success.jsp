@@ -8,7 +8,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="http://211.63.89.133/team1_user_prj3/common/css/main.css"/>
+<link rel="stylesheet" type="text/css" href="http://localhost:8080/team1_user_prj3/common/css/main.css"/>
 <style type="text/css">
 	#class4Wrap{height: 900px; margin:0px auto; }
 	/* 헤더 시작 */
@@ -57,7 +57,7 @@ $(function(){
 <form class="loginFrm">
 	<div id="hLogo">
  	    <a class="navbar-brand" style="margin-right: 0px; "href="/team1_user_prj3/home.do">
-   		    <img src="http://211.63.89.133/team1_user_prj3/common/images/images_join/join_logo1.png"  class="d-inline-block align-top" alt=""><span id="logo">JINI BOOKS</span>
+   		    <img src="http://localhost:8080/team1_user_prj3/common/images/images_join/join_logo1.png"  class="d-inline-block align-top" alt=""><span id="logo">JINI BOOKS</span>
 		</a>
 	</div>
 <div id="login_Input">
@@ -66,7 +66,7 @@ $(function(){
 	</div>
 		<hr color="#dc3545"/>
   <div class="form-group row" id="message">
-		<img src="http://211.63.89.133/team1_user_prj3/common/images/images_join/join_success.png">
+		<img src="http://localhost:8080/team1_user_prj3/common/images/images_join/join_success.png">
     <div class="col-sm-10" >
     	<label class="form-check-label" for="gridCheck1" id="joinMessage"><span id="jini">JINI BOOKS</span> 회원이 되신 것을 환영합니다!</label>
     	<label class="form-check-label" for="gridCheck1" id="joinMessage">이제,<span id="jini">&nbsp;JINI BOOKS&nbsp;</span>에서 보고 싶은 전자책을 다운받으세요!</label>

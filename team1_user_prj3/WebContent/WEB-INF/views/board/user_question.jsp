@@ -9,8 +9,8 @@
 <head>
 <meta charset="UTF-8">
 <title>문의사항</title>
-<link rel="stylesheet" type="text/css" href="http://211.63.89.133/team1_user_prj3/common/css/main.css"/>
-<link rel="stylesheet" type="text/css" href="http://211.63.89.133/team1_user_prj3/common/css/noticeMenu.css"/>
+<link rel="stylesheet" type="text/css" href="http://localhost:8080/team1_user_prj3/common/css/main.css"/>
+<link rel="stylesheet" type="text/css" href="http://localhost:8080/team1_user_prj3/common/css/noticeMenu.css"/>
 <style type="text/css">
 	 
 	 #container{margin-top: 80px}

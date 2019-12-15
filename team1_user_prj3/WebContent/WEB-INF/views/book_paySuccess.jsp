@@ -10,7 +10,7 @@
 <head>
 <meta charset="UTF-8">
 <title>결제 완료 페이지</title>
-<link rel="stylesheet" type="text/css" href="http://211.63.89.133/team1_user_prj3/common/css/main.css"/>
+<link rel="stylesheet" type="text/css" href="http://localhost:8080/team1_user_prj3/common/css/main.css"/>
 <style type="text/css">
 	 
 	/* container 시작 */
@@ -50,7 +50,7 @@ $(function(){
 <!-- container 시작  -->	
 <div id="container">
 	<div class="jumbotron" id="orderComplete">
-		<img src="http://211.63.89.133/team1_user_prj3/common/images/images_order/order_success.png">
+		<img src="http://localhost:8080/team1_user_prj3/common/images/images_order/order_success.png">
 	  <div id="orderMessage">구매가 완료되었습니다.</div>
 	  <hr class="my-4">
 	  <div id="orderMessage2">지금 바로 JINI BOOKS 에서 읽어보세요!</div>

@@ -12,7 +12,7 @@
 <head>
 <meta charset="UTF-8">
 <title>도서 검색</title>
-<link rel="stylesheet" type="text/css" href="http://211.63.89.133/team1_user_prj3/common/css/main.css">
+<link rel="stylesheet" type="text/css" href="http://localhost:8080/team1_user_prj3/common/css/main.css">
 <style type="text/css">
 
 	/* container 시작 */
@@ -152,8 +152,8 @@ function pageMove(url,keyword,pageView,currentPage){
 	<c:forEach var="book" items="${searchBookList}"><!-- newRangeBook -->
 		<div id="bookList" class="row">
 		 	 <div id="bookImg"><a href="book_detail.do?code=${book.book_code}&cateCode=${book.code}"> <!-- 북코드 넘겨주기 --> 
-		 	 	<img src="http://211.63.89.133/team1_user_prj3/common/images/images_book/${book.img}" 
-		 	 	style="width: 130px; height: 190px;" onerror="javascript:this.src='http://211.63.89.133/team1_user_prj3/common/images/images_book/noImg.jpg'"/></a>
+		 	 	<img src="http://localhost:8080/team1_user_prj3/common/images/images_book/${book.img}" 
+		 	 	style="width: 130px; height: 190px;" onerror="javascript:this.src='http://localhost:8080/team1_user_prj3/common/images/images_book/noImg.jpg'"/></a>
 		 	 </div>  
 		 	 <div id="bookContent" class="col-8" >
 		 	  <a href="book_detail.do?code=${book.book_code}&cateCode=${book.code}">
@@ -203,8 +203,8 @@ function pageMove(url,keyword,pageView,currentPage){
 	<c:forEach var="book" items="${nameRangeList}"><!-- newRangeBook -->
 		<div id="bookList" class="row">
 		 	 <div id="bookImg"><a href="book_detail.do?code=${book.book_code}"> <!-- 북코드 넘겨주기 --> 
-		 	 	<img src="http://211.63.89.133/team1_user_prj3/common/images/images_book/${book.img}"
-		 	 	 style="width: 130px; height: 190px;" onerror="javascript:this.src='http://211.63.89.133/team1_user_prj3/common/images/images_book/noImg.jpg'"/></a>
+		 	 	<img src="http://localhost:8080/team1_user_prj3/common/images/images_book/${book.img}"
+		 	 	 style="width: 130px; height: 190px;" onerror="javascript:this.src='http://localhost:8080/team1_user_prj3/common/images/images_book/noImg.jpg'"/></a>
 		 	 </div>  
 		 	 <div id="bookContent" class="col-8" >
 		 	 <a href="book_detail.do?code=${book.book_code}&cateCode=${book.code}">
@@ -254,8 +254,8 @@ function pageMove(url,keyword,pageView,currentPage){
 	<c:forEach var="book" items="${newRangeList}"><!-- newRangeBook -->
 		<div id="bookList" class="row">
 		 	 <div id="bookImg"><a href="book_detail.do?code=${book.book_code}"> <!-- 북코드 넘겨주기 --> 
-		 	 	<img src="http://211.63.89.133/team1_user_prj3/common/images/images_book/${book.img}"
-		 	 	 style="width: 130px; height: 190px;" onerror="javascript:this.src='http://211.63.89.133/team1_user_prj3/common/images/images_book/noImg.jpg'"/></a>
+		 	 	<img src="http://localhost:8080/team1_user_prj3/common/images/images_book/${book.img}"
+		 	 	 style="width: 130px; height: 190px;" onerror="javascript:this.src='http://localhost:8080/team1_user_prj3/common/images/images_book/noImg.jpg'"/></a>
 		 	 </div>  
 		 	 <div id="bookContent" class="col-8" >
 		 	 <a href="book_detail.do?code=${book.book_code}&cateCode=${book.code}">
@@ -305,8 +305,8 @@ function pageMove(url,keyword,pageView,currentPage){
 	<c:forEach var="book" items="${ratingRangeList}"><!-- newRangeBook -->
 		<div id="bookList" class="row">
 		 	 <div id="bookImg"><a href="book_detail.do?code=${book.book_code}"> <!-- 북코드 넘겨주기 --> 
-		 	 	<img src="http://211.63.89.133/team1_user_prj3/common/images/images_book/${book.img}" 
-		 	 	onerror="javascript:this.src='http://211.63.89.133/team1_user_prj3/common/images/images_book/noImg.jpg'"
+		 	 	<img src="http://localhost:8080/team1_user_prj3/common/images/images_book/${book.img}" 
+		 	 	onerror="javascript:this.src='http://localhost:8080/team1_user_prj3/common/images/images_book/noImg.jpg'"
 		 	 	style="width: 130px; height: 190px;"/></a>
 		 	 </div>  
 		 	 <div id="bookContent" class="col-8" >

@@ -9,7 +9,7 @@
 <head>
 <meta charset="UTF-8">
 <title>도서 장바구니</title>
-<link rel="stylesheet" type="text/css" href="http://211.63.89.133/team1_user_prj3/common/css/main.css">
+<link rel="stylesheet" type="text/css" href="http://localhost:8080/team1_user_prj3/common/css/main.css">
 <style type="text/css">
 
 	/* container 시작 */
@@ -193,7 +193,7 @@ $("#payBtn").click(function(){
 <!--검색순서 시작-->
 <nav class="navbar navbar-light" id="nav_Content">
   <span class="navbar-brand">
-    <img src="http://211.63.89.133/team1_user_prj3/common/images/book_cart.png" width="30" height="30" class="d-inline-block">
+    <img src="http://localhost:8080/team1_user_prj3/common/images/book_cart.png" width="30" height="30" class="d-inline-block">
 '<%=id %>'님의 책바구니
   </span>
 </nav>
@@ -241,7 +241,7 @@ $("#payBtn").click(function(){
 				  <input type="checkbox" id="saleChk" name="cartCode" class="book_code"  value="${cart.code}"  onclick="chkPrice()">
 				  </td>
 				  <td style="width: 280px">
-				  <img src="http://211.63.89.133/team1_user_prj3/common/images/images_book/${cart.img}" id="cartList_book_img">
+				  <img src="http://localhost:8080/team1_user_prj3/common/images/images_book/${cart.img}" id="cartList_book_img">
 				  <br/>${cart.title} </td>
 				  <td>${cart.author}</td>
 				  <td> <input type="hidden" name="book_price" value="${cart.sale_price} "/> ${cart.sale_price} 원</td> 
@@ -289,7 +289,7 @@ $("#payBtn").click(function(){
 			      <input type="checkbox" id="rentalChk" name="cartCode" class="book_code"  value="${cart.code}" onclick="chkPrice()">
 			      </td>
 			      <td style="width: 280px">
-			      <img src="http://211.63.89.133/team1_user_prj3/common/images/images_book/${cart.img}" id="cartList_book_img">
+			      <img src="http://localhost:8080/team1_user_prj3/common/images/images_book/${cart.img}" id="cartList_book_img">
 			      <br/>${cart.title} </td>
 			      <td>${cart.author}</td>
 			      <td>7일</td>

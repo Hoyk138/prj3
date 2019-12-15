@@ -8,7 +8,7 @@
 <head>
 <meta charset="UTF-8">
 <title>도서 카테고리검색</title>
-<link rel="stylesheet" type="text/css" href="http://211.63.89.133/team1_user_prj3/common/css/main.css">
+<link rel="stylesheet" type="text/css" href="http://localhost:8080/team1_user_prj3/common/css/main.css">
 <style type="text/css">
 
 	/* container 시작 */
@@ -84,8 +84,8 @@ $(function(){
 	 </div>
       <div class="card-body">
       <a href="book_detail.do?code=${cateBest.bookCode}&cateCode=${cateBest.code}">
-	      <img src="http://211.63.89.133/team1_user_prj3/common/images/images_book/${cateBest.img}" 
-	      id="best_book_img" class="card-img-top" onerror="javascript:this.src='http://211.63.89.133/team1_user_prj3/common/images/images_book/noImg.jpg'">
+	      <img src="http://localhost:8080/team1_user_prj3/common/images/images_book/${cateBest.img}" 
+	      id="best_book_img" class="card-img-top" onerror="javascript:this.src='http://localhost:8080/team1_user_prj3/common/images/images_book/noImg.jpg'">
 	   </a>
         <p class="card-title"><strong><c:out value="${cateBest.title}"/></strong></p>
         <small class="card-text">
@@ -132,8 +132,8 @@ $(function(){
 	 </div>
       <div class="card-body">
       <a href="book_detail.do?code=${cateNew.bookCode}&cateCode=${cateNew.code}">
-	      <img src="http://211.63.89.133/team1_user_prj3/common/images/images_book/${cateNew.img}" 
-	      id="new_book_img" class="card-img-top" onerror="javascript:this.src='http://211.63.89.133/team1_user_prj3/common/images/images_book/noImg.jpg'">
+	      <img src="http://localhost:8080/team1_user_prj3/common/images/images_book/${cateNew.img}" 
+	      id="new_book_img" class="card-img-top" onerror="javascript:this.src='http://localhost:8080/team1_user_prj3/common/images/images_book/noImg.jpg'">
 	   </a>
         <p class="card-title"><strong><c:out value="${cateNew.title}"/></strong></p>
        <small class="card-text">

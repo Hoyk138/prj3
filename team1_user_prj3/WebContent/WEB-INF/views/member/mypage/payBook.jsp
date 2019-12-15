@@ -8,8 +8,8 @@
 <head>
 <meta charset="UTF-8">
 <title>마이페이지 구매/대여</title>
-<link rel="stylesheet" type="text/css" href="http://211.63.89.133/team1_user_prj3/common/css/main.css">
-<link rel="stylesheet" type="text/css" href="http://211.63.89.133/team1_user_prj3/common/css/mypageMenu.css">
+<link rel="stylesheet" type="text/css" href="http://localhost:8080/team1_user_prj3/common/css/main.css">
+<link rel="stylesheet" type="text/css" href="http://localhost:8080/team1_user_prj3/common/css/mypageMenu.css">
 <style type="text/css">
 
 	/* container 시작 */
@@ -76,7 +76,7 @@ $(function(){
 	 </div>
       <div class="card-body">
       
-      <img src="http://211.63.89.133/team1_user_prj3/common/images/images_book/${Rental.img}" width="150px;" height="200px;"/>
+      <img src="http://localhost:8080/team1_user_prj3/common/images/images_book/${Rental.img}" width="150px;" height="200px;"/>
 		
         <small class="card-text">
         <br/>
@@ -104,7 +104,7 @@ $(function(){
     <p><span class="badge badge-primary">구매 ${j}</span></p>
 	 </div>
       <div class="card-body">
-      <img src="http://211.63.89.133/team1_user_prj3/common/images/images_book/${Pay.img}" width="150px;" height="200px;"/>
+      <img src="http://localhost:8080/team1_user_prj3/common/images/images_book/${Pay.img}" width="150px;" height="200px;"/>
 		
         <small class="card-text">
         <br/>

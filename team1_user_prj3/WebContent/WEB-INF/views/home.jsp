@@ -8,7 +8,7 @@
 <head>
 <meta charset="UTF-8">
 <title>사용자 메인 페이지</title>
-<link rel="stylesheet" type="text/css" href="http://211.63.89.133/team1_user_prj3/common/css/main.css"/>
+<link rel="stylesheet" type="text/css" href="http://localhost:8080/team1_user_prj3/common/css/main.css"/>
 <style type="text/css">
 	/* 헤더 시작 */
 	/* 헤더 끝 */
@@ -70,13 +70,13 @@ $(function(){
 			  </a>
 			  
 			  <a href="/team1_user_prj3/faq.do" class="list-group-item list-group-item-action">
-			  <img src="http://211.63.89.133/team1_user_prj3/common/images/images_main/aside_Q&A.png" width="30px" height="30px"/><br/> 고객센터
+			  <img src="http://localhost:8080/team1_user_prj3/common/images/images_main/aside_Q&A.png" width="30px" height="30px"/><br/> 고객센터
 			  </a>
 			  <a href="/team1_user_prj3/question.do" class="list-group-item list-group-item-action">
-			  <img src="http://211.63.89.133/team1_user_prj3/common/images/images_main/aside_inquiry.png" width="30px" height="30px"/><br/> 1:1 문의
+			  <img src="http://localhost:8080/team1_user_prj3/common/images/images_main/aside_inquiry.png" width="30px" height="30px"/><br/> 1:1 문의
 			  </a>
 			  <a href="/team1_user_prj3/notice.do" class="list-group-item list-group-item-action">
-			  <img src="http://211.63.89.133/team1_user_prj3/common/images/images_main/aside_notice.png" width="40px" height="40px"/><br/> 공지사항
+			  <img src="http://localhost:8080/team1_user_prj3/common/images/images_main/aside_notice.png" width="40px" height="40px"/><br/> 공지사항
 			  </a>
 			 <!--  <a href="#" class="list-group-item list-group-item-action">
 			  <img src="images/aside_calendar.png" width="30px" height="30px"/><br/> 이달의 신간
@@ -104,7 +104,7 @@ $(function(){
 				<c:forEach var="recomend1" items="${mainRecomend1}">
 				  <div class="card" style="width:200px; min-height:400px; border:1px solid #444448; background-color: #444448; padding: 10px">
 				    <a href="book_detail.do?code=${recomend1.book_code}&cateCode=${recomend1.code}">
-				    	<img src="http://211.63.89.133/team1_user_prj3/common/images/images_book/${recomend1.img}" class="card-img-top" alt="..." height="250px" onerror="javascript:this.src='http://211.63.89.133/team1_user_prj3/common/images/images_book/noImg.jpg'">
+				    	<img src="http://localhost:8080/team1_user_prj3/common/images/images_book/${recomend1.img}" class="card-img-top" alt="..." height="250px" onerror="javascript:this.src='http://localhost:8080/team1_user_prj3/common/images/images_book/noImg.jpg'">
 				    </a>
 				    <div class="card-body">
 				      <p class="card-text" style="color: #f0f0f0">
@@ -123,7 +123,7 @@ $(function(){
 				<c:forEach var="recomend2" items="${mainRecomend2}">
 				  <div class="card" style="width:200px; min-height:400px; border:1px solid #444448; background-color: #444448; padding: 10px">
 				    <a href="book_detail.do?code=${recomend2.book_code}&cateCode=${recomend2.code}">
-				    	<img src="http://211.63.89.133/team1_user_prj3/common/images/images_book/${recomend2.img}" class="card-img-top" alt="..." height="250px" onerror="javascript:this.src='http://211.63.89.133/team1_user_prj3/common/images/images_book/noImg.jpg'">
+				    	<img src="http://localhost:8080/team1_user_prj3/common/images/images_book/${recomend2.img}" class="card-img-top" alt="..." height="250px" onerror="javascript:this.src='http://localhost:8080/team1_user_prj3/common/images/images_book/noImg.jpg'">
 				    </a>
 				    <div class="card-body">
 				      <p class="card-text" style="color: #f0f0f0">
@@ -162,7 +162,7 @@ $(function(){
 	  <div class="card" style="height:420px; border:1px solid #FFF">
 	  	<p style="text-align: center"><span class="badge badge-danger">${i}</span></p>
 	    <a href="book_detail.do?code=${totalBest.book_code}&cateCode=${totalBest.code}">
-	    	<img src="http://211.63.89.133/team1_user_prj3/common/images/images_book/${totalBest.img}" class="card-img-top" width="100px" height="250px" onerror="javascript:this.src='http://211.63.89.133/team1_user_prj3/common/images/images_book/noImg.jpg'">
+	    	<img src="http://localhost:8080/team1_user_prj3/common/images/images_book/${totalBest.img}" class="card-img-top" width="100px" height="250px" onerror="javascript:this.src='http://localhost:8080/team1_user_prj3/common/images/images_book/noImg.jpg'">
 	    </a>
 	    <div class="card-body">
 	      <p class="card-text">
@@ -206,7 +206,7 @@ $(function(){
 		<c:forEach var="popular" items="${mainPopular}">
 		  <div class="card" style="min-height:400px; border:1px solid #d4edda; background-color: #d4edda;">
 		    <a href="book_detail.do?code=${popular.book_code}&cateCode=${newbook.code}">
-		    	<img src="http://211.63.89.133/team1_user_prj3/common/images/images_book/${popular.img}" class="card-img-top" alt="..." width="100px" height="250px" onerror="javascript:this.src='http://211.63.89.133/team1_user_prj3/common/images/images_book/noImg.jpg'">
+		    	<img src="http://localhost:8080/team1_user_prj3/common/images/images_book/${popular.img}" class="card-img-top" alt="..." width="100px" height="250px" onerror="javascript:this.src='http://localhost:8080/team1_user_prj3/common/images/images_book/noImg.jpg'">
 		    </a>
 		    <div class="card-body">
 		      <p class="card-text" >
@@ -250,7 +250,7 @@ $(function(){
   	<div class="col mb-4">
 	  <div class="card" style="height:420px; border:1px solid #FFF">
 	   <a href="book_detail.do?code=${newbook.book_code}&cateCode=${newbook.code}">
-	    	<img src="http://211.63.89.133/team1_user_prj3/common/images/images_book/${newbook.img}" class="card-img-top" width="100px" height="250px" onerror="javascript:this.src='http://211.63.89.133/team1_user_prj3/common/images/images_book/noImg.jpg'">
+	    	<img src="http://localhost:8080/team1_user_prj3/common/images/images_book/${newbook.img}" class="card-img-top" width="100px" height="250px" onerror="javascript:this.src='http://localhost:8080/team1_user_prj3/common/images/images_book/noImg.jpg'">
 	    </a>
 	    <div class="card-body">
 	      <p class="card-text">
@@ -291,12 +291,12 @@ $(function(){
 		<div class="row" style="background-color: #f0f0f0; padding: 30px">
 			<div class="col">
 			<a href="book_detail.do?code=b_000001&cateCode=BC_000001">
-			<img src="http://211.63.89.133/team1_user_prj3/common/images/images_ad/mainAd.jpg" width="500px" height="250px">
+			<img src="http://localhost:8080/team1_user_prj3/common/images/images_ad/mainAd.jpg" width="500px" height="250px">
 			</a>
 			</div>
 			<div class="col">
 			<a href="book_detail.do?code=b_000007&cateCode=BC_000001">
-			<img src="http://211.63.89.133/team1_user_prj3/common/images/images_ad/mainAd2.jpg" width="500px" height="250px">
+			<img src="http://localhost:8080/team1_user_prj3/common/images/images_ad/mainAd2.jpg" width="500px" height="250px">
 			</a>
 			</div>
 		</div>
@@ -305,12 +305,12 @@ $(function(){
 		<div class="row" style="background-color: #f0f0f0; padding: 30px">
 		<div class="col">
 		<a href="book_detail.do?code=b_000016&cateCode=BC_000001">
-			<img src="http://211.63.89.133/team1_user_prj3/common/images/images_ad/mainAd3.jpg" width="500px" height="250px">
+			<img src="http://localhost:8080/team1_user_prj3/common/images/images_ad/mainAd3.jpg" width="500px" height="250px">
 		</a>
 		</div>
 		<div class="col">
 		<a href="book_detail.do?code=b_000020&cateCode=BC_000001">
-			<img src="http://211.63.89.133/team1_user_prj3/common/images/images_ad/mainAd4.jpg" width="500px" height="250px">
+			<img src="http://localhost:8080/team1_user_prj3/common/images/images_ad/mainAd4.jpg" width="500px" height="250px">
 		</a>
 		</div>
 	</div>
@@ -366,7 +366,7 @@ $(function(){
 			<a href="faq.do"><span style="font-size: 10px; color:#333; padding-left: 10px">더보기 ></span></a>
 		</div>
 		<div id="notice2">
-			<div id="notice3_3"><img src="http://211.63.89.133/team1_user_prj3/common/images/images_main/main_clientCenter.png">1588-1588</div>
+			<div id="notice3_3"><img src="http://localhost:8080/team1_user_prj3/common/images/images_main/main_clientCenter.png">1588-1588</div>
 			<div  id="notice4"> 월~금 09:00-19:00 / 공휴일, 주말 휴무 </div>
 		</div>
 	</div>

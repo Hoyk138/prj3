@@ -8,7 +8,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="http://211.63.89.133/servlet_prj/common/css/main.css"/>
+<link rel="stylesheet" type="text/css" href="http://localhost:8080/servlet_prj/common/css/main.css"/>
 <style type="text/css">
 	#class4Wrap{height: 750px; margin:0px auto; }
 	/* 헤더 시작 */
@@ -55,7 +55,7 @@ $(function(){
 	<div id="hLogo">
 	<nav>
  		<a class="navbar-brand" href="#">
-   		<img src="http://211.63.89.133/Team1_prj3/user_book/images/header_logo.PNG"  class="d-inline-block align-top" alt=""><span id="logo">JINI BOOKS</span>
+   		<img src="http://localhost:8080/Team1_prj3/user_book/images/header_logo.PNG"  class="d-inline-block align-top" alt=""><span id="logo">JINI BOOKS</span>
 		</a>
 	</nav>
 	</div>
@@ -90,7 +90,7 @@ $(function(){
       <button type="button" class="btn btn-danger" id="loginBtn">로그인</button>
     </div>
     <div class="col-sm-10" id="btn">
-      <button type="button" class="btn btn-secondary" id="pwBtn">비밀번호를 잃어버리셨나요? 비밀번호 재설정&nbsp;<img src="http://211.63.89.133/team1_user_prj3/common/images/images_join/join_clickBtn.png"></button>
+      <button type="button" class="btn btn-secondary" id="pwBtn">비밀번호를 잃어버리셨나요? 비밀번호 재설정&nbsp;<img src="http://localhost:8080/team1_user_prj3/common/images/images_join/join_clickBtn.png"></button>
     </div>
   </div>
 </div>
